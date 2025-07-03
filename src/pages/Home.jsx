@@ -8,7 +8,7 @@ function Home() {
   useEffect(() => {
     const updateButtonText = () => {
       if (window.innerWidth <= 768) {
-        setButtonText("Start Journey");
+        setButtonText("Start Your Journey");
       } else {
         setButtonText("Start Your Journey Today");
       }
