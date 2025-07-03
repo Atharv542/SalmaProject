@@ -64,12 +64,20 @@ function AreasOfSupportWithCircle() {
         </div>
 
         {/* Button */}
-        <button className="relative group px-7 animate-bounce mt-10 py-4 bg-white mx-auto border border-teal-400 text-teal-700 rounded-full font-medium inline-flex items-center justify-center transition-all cursor-pointer duration-500 shadow-md hover:shadow-xl hover:pl-5 hover:bg-teal-600 hover:text-white hover:pr-12">
-          <span className="z-10">Get To Know Me More!</span>
-          <span className="absolute right-4 opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-            <FaArrowDownLong className="text-xl" />
-          </span>
-        </button>
+  <button
+  onClick={() => {
+    const aboutSection = document.getElementById("aboutme");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  className="relative group px-7 animate-bounce mt-10 py-4 bg-white mx-auto border border-teal-400 text-teal-700 rounded-full font-medium inline-flex items-center justify-center transition-all cursor-pointer duration-500 shadow-md hover:shadow-xl hover:pl-5 hover:bg-teal-600 hover:text-white hover:pr-12"
+>
+  <span className="z-10">Get To Know Me More!</span>
+  <span className="absolute right-4 opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+    <FaArrowDownLong className="text-xl" />
+  </span>
+</button>
       </div>
     </section>
   );

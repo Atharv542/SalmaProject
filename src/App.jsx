@@ -45,7 +45,7 @@ function App() {
                 
                 <AreasOfSupportWithCircle />
                 </div>
-                <div  style={{ paddingTop: '80px'}} ref={aboutRef}>
+                <div  id="aboutme" style={{ paddingTop: '80px'}} ref={aboutRef}>
                
                   <AboutMe/>
                 </div>
