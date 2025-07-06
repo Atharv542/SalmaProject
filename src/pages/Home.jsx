@@ -40,7 +40,7 @@ function Home() {
           <img 
             src="Home.jpg"
             alt="Life Coaching" 
-            className="rounded-lg  w-full h-48 md:h-[600px] "
+            className="rounded-lg  w-full h-[300px] object-fit md:h-[600px] "
           />
         </motion.div>
 
