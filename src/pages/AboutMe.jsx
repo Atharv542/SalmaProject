@@ -51,9 +51,9 @@ function AboutMe() {
           className="w-full md:w-1/2"
         >
           <img
-            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+            src="SalmaAboutMe.jpg"
             alt="Coach"
-            className="rounded-xl shadow-lg w-full object-cover"
+            className="rounded-xl shadow-lg w-full h-[500px] object-fit"
           />
         </motion.div>
 
@@ -62,9 +62,9 @@ function AboutMe() {
           variants={slideInRight}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="w-full md:w-1/2"
+          className="w-full  md:w-1/2"
         >
-          <p className="text-gray-700 text-lg mb-6 mt-12">
+          <p className="text-gray-700 text-lg mb-6 ">
             Life can feel overwhelming when you're holding the weight of
             limiting beliefs, emotional pain, or the fear of not being enough.
             Whether you're navigating heartbreak, imposter syndrome, or life

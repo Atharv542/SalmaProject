@@ -40,7 +40,7 @@ function Home() {
           <img 
             src="Home.jpg"
             alt="Life Coaching" 
-            className="rounded-lg shadow-2xl w-full h-48 md:h-auto sm:max-w-40 md:max-w-md lg:max-w-lg xl:max-w-xl"
+            className="rounded-lg  w-full h-48 md:h-[600px] "
           />
         </motion.div>
 
@@ -72,7 +72,11 @@ function Home() {
           </motion.h2>
 
           <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed">
-            I support individuals both men and women who are feeling overwhelmed by self-doubt, heartbreak, or life’s uncertainties. Through personalized coaching and proven strategies, I help you regain confidence, develop emotional clarity, and reconnect with your inner strength—so you can move forward with purpose, resilience, and peace of mind.
+           Feeling overwhelmed, stuck, or unsure of the next step?<br/> Whether it’s self-doubt, heartbreak, imposter syndrome, or emotional heaviness you're not alone.
+
+Support is available to help rebuild confidence, find clarity, and reconnect with your inner strength at your own pace, in your own way.
+
+This is your space to heal, grow, and rediscover purpose. With the right guidance, moving forward with resilience and peace of mind becomes possible.
           </p>
 
       
