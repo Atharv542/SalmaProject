@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [buttonText, setButtonText] = useState("Start Your Journey Today");
-
+  const navigate= useNavigate();
   useEffect(() => {
     const updateButtonText = () => {
       if (window.innerWidth <= 768) {
@@ -72,11 +73,7 @@ function Home() {
           </motion.h2>
 
           <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed">
-           Feeling overwhelmed, stuck, or unsure of the next step?<br/> Whether it’s self-doubt, heartbreak, imposter syndrome, or emotional heaviness you're not alone.
-
-Support is available to help rebuild confidence, find clarity, and reconnect with your inner strength at your own pace, in your own way.
-
-This is your space to heal, grow, and rediscover purpose. With the right guidance, moving forward with resilience and peace of mind becomes possible.
+           Struggling with separation, heartbreak, or wounds rooted in past relationships?<br/> Feeling weighed down by self-doubt, limiting beliefs, or the pain of divorce? You’re not alone. This is a safe space to release what’s holding you back, rebuild your confidence, and reconnect with your inner strength. Healing is possible—and you don’t have to do it alone.
           </p>
 
       
@@ -90,7 +87,11 @@ This is your space to heal, grow, and rediscover purpose. With the right guidanc
           </motion.p>
 
           {/* ✅ CTA Button */}
-          <button className="relative group px-6  py-3 bg-none border-2 border-white text-white rounded-full font-semibold  transition-all ease-out cursor-pointer duration-300 shadow-md hover:shadow-xl hover:pl-5 hover:bg-white hover:text-teal-600 hover:pr-12">
+          <button onClick={
+            ()=>{
+              navigate('/booking')
+            }
+          } className="relative group px-6  py-3 bg-none border-2 border-white text-white rounded-full mt-8 font-semibold  transition-all ease-out cursor-pointer duration-300 shadow-md hover:shadow-xl hover:pl-5 hover:bg-white hover:text-teal-600 hover:pr-12">
             <span className="z-10">{buttonText}</span>
           
             {/* Sliding arrow icon */}

@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 function AboutMe() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+  const navigate= useNavigate()
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1.5, ease: "easeOut" } },
@@ -91,7 +92,11 @@ function AboutMe() {
             self-discovery, I’m here to walk beside you.
           </p>
           <div className="mt-4">
-             <button className="relative group px-6  py-3 bg-teal-700  text-white rounded-lg font-semibold  transition-all ease-out cursor-pointer duration-300 shadow-md hover:shadow-xl hover:pl-5 hover:bg-teal-800 hover:pr-12">
+             <button onClick={
+            ()=>{
+              navigate('/booking')
+            }
+          } className="relative group px-6  py-3 bg-teal-700  text-white rounded-lg font-semibold  transition-all ease-out cursor-pointer duration-300 shadow-md hover:shadow-xl hover:pl-5 hover:bg-teal-800 hover:pr-12" >
                         <span className="z-10">Connect Now</span>
                       
                         {/* Sliding arrow icon */}

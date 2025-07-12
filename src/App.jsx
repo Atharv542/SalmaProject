@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Navbar from './pages/Navabr';
 import ScrollToTop from './pages/ScrollToTop';
-
+import BookingForm from './pages/Booking';
+import { Toaster } from "react-hot-toast";
 
 function App() {
   // Create refs for each section
@@ -52,13 +53,16 @@ function App() {
               </>
             }
           />
+          <Route path='/booking' element={<BookingForm/>}/>
           
          
         
           
         </Routes>
       </div>
+      <Toaster/>
     </Router>
+    
   );
 }
 
