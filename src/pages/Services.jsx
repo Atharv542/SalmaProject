@@ -31,7 +31,7 @@ const supportAreas = [
 
 function AreasOfSupportWithCircle() {
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-br from-white via-[#f0fbfa] to-white">
+    <section className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <h2 className="text-4xl font-bold text-teal-700 mb-10">Transformational Guidance</h2>
 

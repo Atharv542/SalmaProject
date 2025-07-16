@@ -7,16 +7,16 @@ import Navbar from './pages/Navabr';
 import ScrollToTop from './pages/ScrollToTop';
 import BookingForm from './pages/Booking';
 import { Toaster } from "react-hot-toast";
+import VisionMission from './pages/VisionMission';
+import WhatToExpect from './pages/WhatToExpect';
+import Footer from './pages/Footer';
 
 function App() {
-  // Create refs for each section
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
-  const storiesRef= useRef(null);
-  const pricingRef= useRef(null);
+  const journeyRef = useRef(null);
 
-  // Scroll to section function
   const scrollToSection = (section) => {
     if (section === 'home' && homeRef.current) {
       homeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,46 +24,57 @@ function App() {
       aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (section === 'services' && contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (section === 'yourjourney' && journeyRef.current) {
+      journeyRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-   
   };
 
   return (
     <Router>
       <ScrollToTop />
       <Navbar scrollToSection={scrollToSection} />
-      <div> {/* Ensures content doesn't go under navbar */}
+      <div>
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <div  style={{ paddingTop: '60px' }} ref={homeRef}>
-               
-                  <Home/>
+                <div style={{ paddingTop: '60px' }} ref={homeRef}>
+                  <Home />
                 </div>
-                <div  style={{ paddingTop: '100px' }} ref={contactRef}>
-                
-                <AreasOfSupportWithCircle />
+                <div style={{ paddingTop: '100px' }} ref={contactRef}>
+                  <AreasOfSupportWithCircle />
                 </div>
-                <div  id="aboutme" style={{ paddingTop: '80px'}} ref={aboutRef}>
-               
-                  <AboutMe/>
+                <div id="aboutme" style={{ paddingTop: '80px' }} ref={aboutRef}>
+                  <AboutMe />
                 </div>
+                <div style={{ paddingTop: '10px' }}>
+                  <VisionMission />
+                </div>
+                <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
+                  <WhatToExpect />
+                </div>
+                <Footer />
               </>
             }
           />
-          <Route path='/booking' element={<BookingForm/>}/>
           
-         
-        
-          
+          {/* ✅ Correctly placed Route */}
+          <Route path="/booking" element={
+            <>
+              <div className='pb-20'>
+                <BookingForm  />
+              </div>
+             
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
-      <Toaster/>
+      <Toaster />
     </Router>
-    
   );
 }
 
 export default App;
+

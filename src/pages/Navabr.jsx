@@ -30,7 +30,7 @@ const Navbar = ({ scrollToSection }) => {
     { label: "Home", icon: <AiFillHome className="mr-2" />, section: "home" },
     { label: "Services", icon: <MdMiscellaneousServices className="mr-2" />, section: "services" },
     { label: "About Me", icon: <FaUserAlt className="mr-2" />, section: "aboutme" },
-    { label: "Your Journey", icon: <GiPathDistance className="mr-2" />,section: "" },
+    { label: "Your Journey", icon: <GiPathDistance className="mr-2" />,section: "yourjourney" },
   ];
 
   return (
