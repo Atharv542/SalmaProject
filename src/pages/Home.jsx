@@ -233,12 +233,12 @@ function Home() {
           >
             <div className="relative group max-w-md lg:max-w-lg xl:max-w-xl -mt-12">
               {/* Image glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/30 to-teal-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="absolute -inset-4  bg-gradient-to-r from-cyan-400/30 to-teal-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
               
               <motion.img 
                 src="Home.jpg"
                 alt="Life Coaching - Healing and Growth" 
-                className="relative rounded-2xl w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[550px] object-cover shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                className="relative rounded-2xl mt-10 md:-mt-5 w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[550px] object-cover shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               />
