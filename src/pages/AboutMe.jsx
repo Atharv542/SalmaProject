@@ -130,7 +130,7 @@ function AboutMe() {
               <motion.img
                 src="SalmaAboutMe.jpg"
                 alt="Professional Coach"
-                className="relative  rounded-2xl shadow-2xl w-full h-[400px] sm:h-[500px] lg:h-[600px] -mt-25 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="relative  rounded-2xl shadow-2xl w-full h-[400px] sm:h-[500px] lg:h-[600px] md:-mt-25 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               />

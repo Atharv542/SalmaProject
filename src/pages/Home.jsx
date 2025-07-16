@@ -117,7 +117,7 @@ function Home() {
             {/* Hero Heading */}
             <motion.div variants={itemVariants}>
               <motion.h1 
-                className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold italic leading-tight relative -mt-10"
+                className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold italic leading-tight relative md:-mt-10"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
