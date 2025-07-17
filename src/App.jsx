@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import AreasOfSupportWithCircle from './pages/Services';
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
@@ -11,11 +11,13 @@ import VisionMission from './pages/VisionMission';
 import WhatToExpect from './pages/WhatToExpect';
 import Footer from './pages/Footer';
 
-function App() {
+function AppWrapper() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const journeyRef = useRef(null);
+  const navigate= useNavigate()
+  const location = useLocation();
 
   const scrollToSection = (section) => {
     if (section === 'home' && homeRef.current) {
@@ -29,52 +31,70 @@ function App() {
     }
   };
 
+  // 👇 Handle scroll after route navigation (e.g., from /booking)
+  useEffect(() => {
+  const section = location.state?.sectionToScroll;
+  if (section) {
+    setTimeout(() => {
+      const el = document.getElementById(section);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      navigate("/", { replace: true, state: null }); // clear state
+    }, 100);
+  }
+}, [location, navigate]);
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Navbar scrollToSection={scrollToSection} />
-      <div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <div style={{ paddingTop: '60px' }} ref={homeRef}>
-                  <Home />
-                </div>
-                <div style={{ paddingTop: '100px' }} ref={contactRef}>
-                  <AreasOfSupportWithCircle />
-                </div>
-                <div id="aboutme" style={{ paddingTop: '80px' }} ref={aboutRef}>
-                  <AboutMe />
-                </div>
-                <div style={{ paddingTop: '10px' }}>
-                  <VisionMission />
-                </div>
-                <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
-                  <WhatToExpect />
-                </div>
-                <Footer />
-              </>
-            }
-          />
-          
-          {/* ✅ Correctly placed Route */}
-          <Route path="/booking" element={
+      <Routes>
+        <Route
+          path="/"
+          element={
             <>
-              <div className='pb-20'>
-                <BookingForm  />
+              <div style={{ paddingTop: '60px' }} ref={homeRef}>
+                <Home />
               </div>
-             
+              <div style={{ paddingTop: '100px' }} ref={contactRef}>
+                <AreasOfSupportWithCircle />
+              </div>
+              <div id="aboutme" style={{ paddingTop: '80px' }} ref={aboutRef}>
+                <AboutMe />
+              </div>
+              <div style={{ paddingTop: '10px' }}>
+                <VisionMission />
+              </div>
+              <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
+                <WhatToExpect />
+              </div>
               <Footer />
             </>
-          } />
-        </Routes>
-      </div>
+          }
+        />
+        <Route
+          path="/booking"
+          element={
+            <>
+              <div className='pb-20'>
+                <BookingForm />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
       <Toaster />
-    </Router>
+    </>
   );
 }
 
-export default App;
-
+// Use wrapper so `useLocation` can work inside
+export default function App() {
+  return (
+    <Router>
+      <AppWrapper />
+    </Router>
+  );
+}

@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Home, Heart, User, Compass } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +19,12 @@ const Navbar = ({ scrollToSection }) => {
   }, []);
 
   const handleNavigation = (section) => {
-    scrollToSection(section);
     setIsOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/", { state: { sectionToScroll: section } });
+    } else {
+      scrollToSection(section);
+    }
   };
 
   const navItems = [
@@ -29,23 +37,13 @@ const Navbar = ({ scrollToSection }) => {
   return (
     <>
       {/* Navbar */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${"bg-white/95 backdrop-blur-md shadow-xl border-b border-rose-100"}`}
-      >
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${"bg-white/95 backdrop-blur-md shadow-xl border-b border-rose-100"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div
-              className={`text-2xl font-bold transition-colors duration-300 ${
-                scrolled ? "text-gray-800" : "text-white"
-              }`}
-            >
-              <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
-                Coaching
-              </span>
-              <span className={"text-gray-800"}>
-                {" "}with Salma
-              </span>
+            <div className={`text-2xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
+              <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Coaching</span>
+              <span className="text-gray-800"> with Salma</span>
             </div>
 
             {/* Desktop Menu */}
@@ -56,7 +54,7 @@ const Navbar = ({ scrollToSection }) => {
                   <button
                     key={index}
                     onClick={() => handleNavigation(item.section)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300 group cursor-pointer ${"text-gray-700 hover:text-rose-600 hover:bg-rose-50"}`}
+                    className="flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300 group cursor-pointer text-gray-700 hover:text-rose-600 hover:bg-rose-50"
                   >
                     <IconComponent className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                     <span>{item.label}</span>
@@ -67,7 +65,7 @@ const Navbar = ({ scrollToSection }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden p-2 rounded-lg transition-all duration-200 ${"text-gray-700 hover:bg-gray-100" }`}
+              className="md:hidden p-2 rounded-lg transition-all duration-200 text-gray-700 hover:bg-gray-100"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,26 +76,20 @@ const Navbar = ({ scrollToSection }) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 md:hidden ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 md:hidden ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 p-6 text-white">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-bold">
-                <span className="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">
-                  Coaching
-                </span>
+                <span className="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">Coaching</span>
                 <span className="text-white"> with Salma</span>
               </h2>
               <button

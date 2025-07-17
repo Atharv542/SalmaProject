@@ -34,7 +34,9 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
         console.error("Email error:", error.text);
         toast.error("Something went wrong. Please try again.");
       }
+      
     );
+   
 };
 
   return (

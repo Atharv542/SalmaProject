@@ -23,6 +23,8 @@ function Home() {
     return () => window.removeEventListener("resize", updateButtonText);
   }, []);
 
+  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -200,7 +202,7 @@ function Home() {
             >
               <motion.button 
                 onClick={() => navigate('/booking')}
-                className="group relative px-8 py-4 bg-transparent border-2 border-white text-white  rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"
+                className="group relative cursor-pointer px-8 py-4 bg-transparent border-2 border-white text-white  rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
