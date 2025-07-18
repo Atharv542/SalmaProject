@@ -63,7 +63,7 @@ const WhatToExpect = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+    <div className="min-h-screen flex  items-center justify-center p-4 sm:p-6 lg:p-8 ">
       <div
         ref={cardRef}
         onMouseEnter={() => setIsHovered(true)}
