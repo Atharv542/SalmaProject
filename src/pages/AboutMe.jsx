@@ -126,7 +126,7 @@ function AboutMe() {
             className="w-full lg:w-1/2"
           >
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-2xl blur opacity-5 group-hover:opacity-20 transition duration-300"></div>
               <motion.img
                 src="SalmaAboutMe.jpg"
                 alt="Professional Coach"

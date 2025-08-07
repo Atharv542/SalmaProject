@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex space-x-6 mb-3">
           <a
-            href=""
+            href="https://www.instagram.com/salmanisha2025/"
             target="_blank"
             rel="noreferrer"
             className="text-2xl transition-transform transform hover:scale-110 "
@@ -17,7 +17,7 @@ const Footer = () => {
           </a>
 
           <a
-            href=""
+            href="https://www.facebook.com/share/1AwdKwVSov/"
             target="_blank"
             rel="noreferrer"
             className="text-2xl transition-transform transform hover:scale-110"
@@ -34,7 +34,7 @@ const Footer = () => {
             <FaLinkedin className="text-blue-400" />
           </a>
           <a
-            href=""
+            href="https://www.youtube.com/@salmanisha2025"
             target="_blank"
             rel="noreferrer"
             className=" -mt-0.5 transition-transform transform hover:scale-110"

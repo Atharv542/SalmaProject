@@ -88,10 +88,10 @@ const VisionMission = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
             
-            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-teal-300/50 group-hover:bg-white/95 transform group-hover:scale-[1.02]">
+            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-teal-300/50 group-hover:bg-white/95 transform md:group-hover:scale-[1.02]">
               {/* Icon Header */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg md:group-hover:scale-110 md:group-hover:rotate-3 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -137,10 +137,10 @@ const VisionMission = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-violet-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
             
-            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-blue-300/50 group-hover:bg-white/95 transform group-hover:scale-[1.02]">
+            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-blue-300/50 group-hover:bg-white/95 transform md:group-hover:scale-[1.02]">
               {/* Icon Header */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl flex items-center justify-center shadow-lg md:group-hover:scale-110 md:group-hover:rotate-3 transition-transform duration-300">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
                 <div>

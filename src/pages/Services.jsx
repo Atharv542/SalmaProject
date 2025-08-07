@@ -36,11 +36,11 @@ function AreasOfSupportWithCircle() {
         <h2 className="text-4xl font-bold text-teal-700 mb-10">Transformational Guidance</h2>
 
         {/* Desktop Circular Layout */}
-        <div className="relative w-[500px] h-[500px] mx-auto hidden lg:block">
+        <div className="relative group w-[500px] h-[500px] mx-auto hidden lg:block">
           <img
             src="https://i.pinimg.com/originals/43/9a/fe/439afeaaef35fe16887016faa2bb1eb5.png"
             alt="Helping Hands"
-            className="absolute top-[65%] left-[53%] w-[250px] opacity-75 -translate-x-1/2 -translate-y-1/2 z-0"
+            className="absolute top-[65%] left-[53%] w-[250px] opacity-80 group-hover:opacity-95 -translate-x-1/2 -translate-y-1/2 z-0"
           />
           <SupportCard area={supportAreas[0]} style="top-0 left-1/2 -translate-x-1/2" />
           <SupportCard area={supportAreas[1]} style="top-[20%] left-[100%] -translate-x-1/2" />

@@ -80,7 +80,7 @@ const WhatToExpect = () => {
           transition-all duration-500 ease-out 
           shadow-xl hover:shadow-2xl
           transform-gpu
-          ${isHovered ? 'scale-[1.02]' : 'scale-100'}
+          ${isHovered ? 'md:scale-[1.02]' : 'md:scale-100'}
         `}
       >
         {/* Background lights */}
