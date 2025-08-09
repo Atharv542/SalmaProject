@@ -41,10 +41,16 @@ const Navbar = ({ scrollToSection }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className={`text-2xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
+            <div className="flex items-center gap-5">
+             {/*<div>
+              <img src="NewLogo.png" className="w-10 h-10"/>
+            </div>*/}
+            <div className={`text-2xl md:text-4xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
               <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Coaching</span>
               <span className="text-gray-800"> with Salma</span>
             </div>
+            </div>
+           
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">

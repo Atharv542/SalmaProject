@@ -124,20 +124,20 @@ function Home() {
                 transition={{ duration: 0.2 }}
               >
                 <span className="bg-gradient-to-r from-white via-cyan-100 to-teal-100 bg-clip-text text-transparent">
-                  Heal.
-                </span>{" "}
-                <span className="bg-gradient-to-r from-cyan-200 via-white to-teal-200 bg-clip-text text-transparent">
                   Let Go.
                 </span>{" "}
-                <span className="bg-gradient-to-r from-teal-100 via-cyan-100 to-white bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-200 via-white to-teal-200 bg-clip-text text-transparent">
                   Grow.
+                </span>{" "}
+                <span className="bg-gradient-to-r from-teal-100 via-cyan-100 to-white bg-clip-text text-transparent">
+                  Transform.
                 </span>
                 
                 {/* Decorative underline */}
                 <motion.div 
                   className="absolute -bottom-2 left-0 lg:left-0 right-0 lg:right-auto h-1 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full mx-auto lg:mx-0"
                   initial={{ width: 0 }}
-                  animate={{ width: "75%" }}
+                  animate={{ width: "95%" }}
                   transition={{ duration: 1.5, delay: 1 }}
                 />
               </motion.h1>

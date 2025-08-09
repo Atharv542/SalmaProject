@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex space-x-6 mb-3">
           <a
-            href="https://www.instagram.com/salmanisha2025/"
+            href="https://www.instagram.com/theinnerbloomjourney/"
             target="_blank"
             rel="noreferrer"
             className="text-2xl transition-transform transform hover:scale-110 "
@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
 
           <a
-            href=""
+            href="https://www.linkedin.com/in/salma-nisha-657795117?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noreferrer"
             className="text-2xl transition-transform transform hover:scale-110"

@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import VisionMission from './pages/VisionMission';
 import WhatToExpect from './pages/WhatToExpect';
 import Footer from './pages/Footer';
+import TestimonialCarousel from './pages/Testimonial';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -68,6 +69,9 @@ function AppWrapper() {
               </div>
               <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
                 <WhatToExpect />
+              </div>
+              <div className="pb-20 md:ml-20">
+                <TestimonialCarousel />
               </div>
               <Footer />
             </>
