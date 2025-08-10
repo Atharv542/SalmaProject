@@ -41,14 +41,14 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
 
   return (
     <div className="h-[calc(100vh-80px)] px-4 pt-40 bg-gray-50 flex items-center justify-center">
-      <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl border-t-4 border-teal-500 p-6 sm:p-8 overflow-hidden">
-        <h2 className="text-2xl sm:text-3xl font-bold text-teal-600 text-center mb-4 sm:mb-6">
+      <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl border-t-4 border-pink-500 p-6 sm:p-8 overflow-hidden">
+        <h2 className="text-2xl sm:text-3xl font-bold text-pink-500 text-center mb-4 sm:mb-6">
           Book a Free Life Coaching Session
         </h2>
         <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
           {/* Full Name */}
           <div>
-            <label htmlFor="name" className="block text-teal-700 font-semibold mb-1">
+            <label htmlFor="name" className="block text-black font-semibold mb-1">
               Full Name <span className="text-red-600">*</span>
             </label>
             <input
@@ -56,14 +56,14 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
               id="name"
               name="user_name"
               placeholder="Enter your full name"
-              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
+              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             />
           </div>
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-teal-700 font-semibold mb-1">
+            <label htmlFor="email" className="block text-black font-semibold mb-1">
               Email Address <span className="text-red-600">*</span>
             </label>
             <input
@@ -71,14 +71,14 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
               id="email"
               name="user_email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
+              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             />
           </div>
 
           {/* Phone Number with Country Code */}
           <div>
-            <label className="block text-teal-700 font-semibold mb-1">
+            <label className="block text-black font-semibold mb-1">
               Phone Number <span className="text-red-600">*</span>
             </label>
             <PhoneInput
@@ -103,7 +103,7 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-teal-700 font-semibold mb-1">
+            <label htmlFor="message" className="block text-black font-semibold mb-1">
               Your Message <span className="text-red-600">*</span>
             </label>
             <textarea
@@ -111,7 +111,7 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
               name="message"
               rows="3"
               placeholder="Tell us how we can help you"
-              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm sm:text-base"
+              className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             ></textarea>
           </div>
@@ -119,7 +119,7 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
           {/* CTA Button */}
           <button
             type="submit"
-            className="w-full cursor-pointer bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 sm:py-3 rounded-lg transition duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+            className="w-full cursor-pointer bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 sm:py-3 rounded-lg transition duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
           >
             Connect with Me
           </button>

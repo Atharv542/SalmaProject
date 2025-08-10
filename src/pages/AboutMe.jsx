@@ -185,29 +185,29 @@ const AboutSection = () => {
             </div>
 
             <motion.div 
-              className="pt-8"
-              variants={staggerItem}
-            >
-              <motion.button 
-                onClick={handleConnectClick}
-                className="  px-10 py-5 cursor-pointer bg-red-600 text-white rounded-2xl font-bold text-lg hover:scale-105 "
-                
+          className="pt-8"
+          variants={staggerItem}
+        >
+          <motion.button 
+            onClick={handleConnectClick}
+            className="  px-10 py-5 cursor-pointer bg-gradient-to-r from-red-600 via-red-700 to-pink-600 text-white rounded-2xl font-bold text-lg hover:scale-105 "
+            
+          >
+            <span className="  flex items-center gap-3">
+              Connect Now
+              <motion.span
+                className=" transition-transform duration-300"
+                initial={{ x: 0 }}
+                whileHover={{ x: 8 }}
               >
-                <span className="  flex items-center gap-3">
-                  Connect Now
-                  <motion.span
-                    className=" transition-transform duration-300"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 8 }}
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.span>
-                </span>
-                
-             
-                
-              </motion.button>
-            </motion.div>
+                <ArrowRight className="w-5 h-5" />
+              </motion.span>
+            </span>
+            
+         
+            
+          </motion.button>
+        </motion.div>
           </motion.div>
         </div>
       </div>
