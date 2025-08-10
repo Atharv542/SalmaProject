@@ -54,7 +54,7 @@ function AreasOfSupportWithCircle() {
           {supportAreas.map((area, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl shadow-md p-5 border border-teal-100 hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl shadow-md p-5 border border-red-100 hover:shadow-xl transition-all"
             >
               <div className="text-3xl mb-3">{area.icon}</div>
               <h3 className="text-lg font-semibold text-red-700 mb-1">{area.title}</h3>
