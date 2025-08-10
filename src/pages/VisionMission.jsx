@@ -37,7 +37,7 @@ const VisionMission = () => {
     <section 
       id="vision-mission" 
       ref={ref} 
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-teal-50/50 overflow-hidden"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-red-50 via-[#F78FA7]/10 to-rose-50/50 overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,15 +55,15 @@ const VisionMission = () => {
           className="text-center mb-20"
         >
           <div className="flex items-center justify-center mb-6">
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-full border border-teal-200/50 shadow-sm">
-              <Sparkles className="w-4 h-4 text-teal-600" />
-              <span className="text-teal-700 text-sm font-semibold">Core Values</span>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-50 to-rose-50 rounded-full border border-rose-200/50 shadow-sm">
+              <Sparkles className="w-4 h-4 text-rose-600" />
+              <span className="text-red-700 text-sm font-semibold">Core Values</span>
             </div>
           </div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-gray-900">Mission &</span>{" "}
-            <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 via-rose-500 to-red-600 bg-clip-text text-transparent">
               Vision
             </span>
           </h2>
@@ -73,7 +73,7 @@ const VisionMission = () => {
           </p>
           
           <div className="flex items-center justify-center mt-8">
-            <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full shadow-sm" />
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-rose-500 rounded-full shadow-sm" />
           </div>
         </motion.div>
 
@@ -88,17 +88,17 @@ const VisionMission = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
             
-            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-teal-300/50 group-hover:bg-white/95 transform md:group-hover:scale-[1.02]">
+            <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:border-red-400/50 group-hover:bg-white/95 transform md:group-hover:scale-[1.02]">
               {/* Icon Header */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg md:group-hover:scale-110 md:group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-500 rounded-2xl flex items-center justify-center shadow-lg md:group-hover:scale-110 md:group-hover:rotate-3 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-teal-700 transition-colors duration-300">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">
                     My Mission
                   </h3>
-                  <div className="w-12 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full mt-2" />
+                  <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-rose-500 rounded-full mt-2" />
                 </div>
               </div>
 
@@ -110,21 +110,21 @@ const VisionMission = () => {
               {/* Key Points */}
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-teal-500 rounded-full" />
+                  <div className="w-2 h-2 bg-red-500 rounded-full" />
                   <span>Mindset coaching & relationship tools</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                  <div className="w-2 h-2 bg-[#FF66CC] rounded-full" />
                   <span>Heart-centered guidance & emotional healing</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-cyan-500 rounded-full" />
+                  <div className="w-2 h-2 bg-rose-600 rounded-full" />
                   <span>Building confidence & meaningful connections</span>
                 </div>
               </div>
 
               {/* Decorative accent */}
-              <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-teal-300/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-red-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </motion.div>
 
@@ -185,9 +185,9 @@ const VisionMission = () => {
           animate={isInView ? "visible" : "hidden"}
           className="text-center mt-20"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-50 to-blue-50 rounded-full border border-teal-200/50 shadow-sm">
-            <Heart className="w-5 h-5 text-teal-600" />
-            <span className="text-teal-700 font-semibold">Ready to transform your life?</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-50 to-rose-50 rounded-full border border-red-200/50 shadow-sm">
+            <Heart className="w-5 h-5 text-red-600" />
+            <span className="text-red-700 font-semibold">Ready to transform your life?</span>
           </div>
         </motion.div>
       </div>

@@ -37,18 +37,16 @@ const Navbar = ({ scrollToSection }) => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${"bg-white/95 backdrop-blur-md shadow-xl border-b border-rose-100"}`}>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${"bg-[#F7F7F7] backdrop-blur-md shadow-xl border-b border-rose-100"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
+            <img src="Logo3.png" className=" h-15 ml-5"/>
             <div className="flex items-center gap-5">
-             {/*<div>
-              <img src="NewLogo.png" className="w-10 h-10"/>
-            </div>*/}
-            <div className={`text-2xl md:text-4xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
+          
+            {/*<div className={`text-2xl md:text-4xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
               <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Coaching</span>
               <span className="text-gray-800"> with Salma</span>
-            </div>
+            </div>*/}
             </div>
            
 
@@ -95,8 +93,8 @@ const Navbar = ({ scrollToSection }) => {
           <div className="bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 p-6 text-white">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-bold">
-                <span className="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">Coaching</span>
-                <span className="text-white"> with Salma</span>
+                <span className="text-white">Inner</span>
+                <span className="text-white"> Bloom Journey</span>
               </h2>
               <button
                 onClick={() => setIsOpen(false)}

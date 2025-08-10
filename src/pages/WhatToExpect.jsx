@@ -73,7 +73,7 @@ const WhatToExpect = () => {
           p-6 sm:p-8 lg:p-12 
           border border-gray-200/50 
           bg-white/90 backdrop-blur-sm 
-          hover:border-teal-300/50 hover:bg-white/95
+          hover:border-red-300 hover:bg-white/95
           rounded-3xl 
           flex flex-col lg:flex-row items-center justify-between 
           overflow-hidden 
@@ -98,9 +98,9 @@ const WhatToExpect = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center lg:justify-start mb-6"
           >
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-full border border-teal-200/50 shadow-sm">
-              <Star className="w-4 h-4 text-teal-600 fill-current" />
-              <span className="text-teal-700 text-sm font-semibold">Premium Coaching</span>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-50 to-rose-50 rounded-full border border-red-200/50 shadow-sm">
+              <Star className="w-4 h-4 text-red-600 fill-current" />
+              <span className="text-red-700 text-sm font-semibold">Premium Coaching</span>
             </div>
           </motion.div>
 
@@ -108,7 +108,7 @@ const WhatToExpect = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-teal-700 text-sm sm:text-base font-bold mb-2 tracking-wide uppercase"
+            className="text-red-700 text-sm sm:text-base font-bold mb-2 tracking-wide uppercase"
           >
             Why I am the
           </motion.h2>
@@ -120,7 +120,7 @@ const WhatToExpect = () => {
             className="text-gray-900 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight"
           >
             Best Choice For Your{" "}
-            <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-500 via-rose-400 to-pink-500 bg-clip-text text-transparent">
               Transition?
             </span>
           </motion.h1>
@@ -139,11 +139,11 @@ const WhatToExpect = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             onClick={() => navigate('/booking')}
-            className="group cursor-pointer relative inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+            className="group cursor-pointer relative inline-flex items-center gap-3 bg-red-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
-            <span className="relative z-10">Connect with Salma</span>
+            <span className="relative z-10">Connect with me</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+ 
           </motion.button>
         </div>
 
@@ -164,20 +164,20 @@ const WhatToExpect = () => {
                   initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className={`group relative p-6 bg-gradient-to-br ${feature.bgColor} backdrop-blur-sm rounded-2xl border ${feature.borderColor} hover:border-teal-300/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-100/50 transform hover:scale-[1.02]`}
+                  className={`group relative p-6 bg-gradient-to-br ${feature.bgColor} backdrop-blur-sm rounded-2xl border ${feature.borderColor}  transition-all duration-300 hover:shadow-lg  transform hover:scale-[1.02]`}
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                       {feature.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-gray-900 font-bold text-lg mb-3 group-hover:text-teal-700 transition-colors duration-300 leading-tight">
+                      <h3 className="text-gray-900 font-bold text-lg mb-3  transition-colors duration-300 leading-tight">
                         {feature.title}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
-                  <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-teal-300 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
                 </motion.div>
               ))}
             </motion.div>
@@ -191,7 +191,7 @@ const WhatToExpect = () => {
                 className={`
                   h-2 rounded-full transition-all duration-300
                   ${idx === startIndex % features.length || idx === (startIndex + 1) % features.length
-                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 w-8 shadow-sm'
+                    ? 'bg-gradient-to-r from-red-500 to-rose-500 w-8 shadow-sm'
                     : 'bg-gray-300 w-2 hover:bg-gray-400'
                   }
                 `}

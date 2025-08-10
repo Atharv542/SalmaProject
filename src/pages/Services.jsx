@@ -31,9 +31,9 @@ const supportAreas = [
 
 function AreasOfSupportWithCircle() {
   return (
-    <section className="relative py-24 px-6">
+    <section className="relative py-24 bg-gray-100/70 px-6">
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        <h2 className="text-4xl font-bold text-teal-700 mb-10">Transformational Guidance</h2>
+        <h2 className="text-4xl font-bold text-red-400 mb-10">Transformational Guidance</h2>
 
         {/* Desktop Circular Layout */}
         <div className="relative group w-[500px] h-[500px] mx-auto hidden lg:block">
@@ -57,7 +57,7 @@ function AreasOfSupportWithCircle() {
               className="bg-white rounded-2xl shadow-md p-5 border border-teal-100 hover:shadow-xl transition-all"
             >
               <div className="text-3xl mb-3">{area.icon}</div>
-              <h3 className="text-lg font-semibold text-teal-700 mb-1">{area.title}</h3>
+              <h3 className="text-lg font-semibold text-red-700 mb-1">{area.title}</h3>
               <p className="text-gray-600 text-sm">{area.desc}</p>
             </div>
           ))}
@@ -71,7 +71,7 @@ function AreasOfSupportWithCircle() {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   }}
-  className="relative group px-7 animate-bounce mt-10 py-4 bg-white mx-auto border border-teal-400 text-teal-700 rounded-full font-medium inline-flex items-center justify-center transition-all cursor-pointer duration-500 shadow-md hover:shadow-xl hover:pl-5 hover:bg-teal-600 hover:text-white hover:pr-12"
+  className="relative group px-7 animate-bounce mt-10 py-4 bg-white mx-auto border border-red-400 text-red-700 rounded-full font-medium inline-flex items-center justify-center transition-all cursor-pointer duration-500 shadow-md hover:shadow-xl hover:pl-5 hover:bg-red-600 hover:text-white hover:pr-12"
 >
   <span className="z-10">Get To Know Me More!</span>
   <span className="absolute right-4 opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
@@ -86,10 +86,10 @@ function AreasOfSupportWithCircle() {
 function SupportCard({ area, style }) {
   return (
     <div
-      className={`absolute ${style} bg-white rounded-full shadow-lg p-4 w-48 border border-teal-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
+      className={`absolute ${style} bg-white rounded-full shadow-lg p-4 w-48 border border-red-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
     >
-      <div className="text-2xl mb-2">{area.icon}</div>
-      <h3 className="text-md font-semibold text-teal-700 mb-1">{area.title}</h3>
+      <div className="text-2xl mb-2 ">{area.icon}</div>
+      <h3 className="text-md font-semibold text-black mb-1">{area.title}</h3>
       <p className="text-gray-600 text-sm">{area.desc}</p>
     </div>
   );

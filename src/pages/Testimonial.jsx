@@ -24,7 +24,7 @@ const TestimonialCarousel = () => {
     <section className="py-16 bg-white relative"> {/* Changed to greenish background */}
       <div className="text-center mb-12 w-full">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-          What Our <span className="text-green-700">Clients Say</span>
+          What Our <span className="text-red-600">Clients Say</span>
         </h2>
         <p className="text-md md:text-xl text-gray-500 max-w-3xl mx-auto mb-10"> {/* Added mb-10 for spacing */}
           Discover how I've helped individuals transform and achieve their goals

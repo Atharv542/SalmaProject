@@ -58,10 +58,10 @@ function AppWrapper() {
               <div style={{ paddingTop: '60px' }} ref={homeRef}>
                 <Home />
               </div>
-              <div style={{ paddingTop: '100px' }} ref={contactRef}>
+              <div style={{  }} ref={contactRef}>
                 <AreasOfSupportWithCircle />
               </div>
-              <div id="aboutme" style={{ paddingTop: '80px' }} ref={aboutRef}>
+              <div id="aboutme" style={{ }} ref={aboutRef}>
                 <AboutMe />
               </div>
               <div style={{ paddingTop: '10px' }}>
