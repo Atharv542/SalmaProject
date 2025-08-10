@@ -41,8 +41,7 @@ const VisionMission = () => {
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-teal-100/40 to-emerald-100/40 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-100/40 to-violet-100/40 rounded-full blur-3xl animate-pulse delay-1000" />
+       
         <div className="absolute top-1/3 left-1/3 w-60 h-60 bg-gradient-to-br from-rose-100/30 to-pink-100/30 rounded-full blur-3xl animate-pulse delay-500" />
       </div>
 

@@ -85,8 +85,7 @@ const WhatToExpect = () => {
       >
         {/* Background lights */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-teal-100/30 to-emerald-100/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-100/30 to-violet-100/30 rounded-full blur-3xl animate-pulse" />
+        
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-rose-100/20 to-pink-100/20 rounded-full blur-3xl animate-pulse delay-500" />
         </div>
 
