@@ -121,7 +121,7 @@ function Home() {
                 You’re ready to let go of the pain, the doubts, and the beliefs that keep you stuck?
 
               </p>
-              <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 -mt-2">
+              <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 md:-mt-2">
                 The Inner Bloom Journey is your space to heal from heartbreak, divorce, or separation to release the weight of limiting beliefs and to rebuild your self-worth from the inside out. Here, you’ll find the clarity, confidence, and inner strength you need to create a life you love one that reflects who you truly are and the future you deserve.
               </p>
             </motion.div>
