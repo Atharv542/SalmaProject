@@ -117,12 +117,12 @@ function Home() {
 
             {/* Description */}
             <motion.div className="space-y-4 -mt-5" variants={itemVariants}>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg lg:text-xl italic text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 You’re ready to let go of the pain, the doubts, and the beliefs that keep you stuck?
 
               </p>
-              <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                The Inner Bloom Journey is your space to heal from heartbreak, divorce, or separation to release the weight of limiting beliefs and to rebuild your self-worth from the inside out. Here, you’ll find the clarity, confidence, and inner strength you need to create a life you love one that reflects who you truly are and the future you deserve
+              <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 -mt-2">
+                The Inner Bloom Journey is your space to heal from heartbreak, divorce, or separation to release the weight of limiting beliefs and to rebuild your self-worth from the inside out. Here, you’ll find the clarity, confidence, and inner strength you need to create a life you love one that reflects who you truly are and the future you deserve.
               </p>
             </motion.div>
 
@@ -145,7 +145,7 @@ function Home() {
             </motion.div>
 
             {/* CTA Button */}
-            <motion.div  variants={itemVariants} className="-mt-5">
+            <motion.div  variants={itemVariants} className="-mt-7">
               <motion.button
                 onClick={() => navigate("/booking")}
                 className="group  relative cursor-pointer px-8 py-4 bg-transparent border-2 border-red-400 text-red-500 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"

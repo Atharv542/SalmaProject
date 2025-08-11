@@ -11,6 +11,7 @@ import VisionMission from './pages/VisionMission';
 import WhatToExpect from './pages/WhatToExpect';
 import Footer from './pages/Footer';
 import TestimonialCarousel from './pages/Testimonial';
+import Preloader from './pages/IntroAnimation';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -55,6 +56,10 @@ function AppWrapper() {
           path="/"
           element={
             <>
+                  <>
+      <Preloader />
+     
+    </>
               <div style={{ paddingTop: '60px' }} ref={homeRef}>
                 <Home />
               </div>
