@@ -18,10 +18,10 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
 
   emailjs
     .sendForm(
-      "service_m9367l9",
-      "template_znkmnob",
+      "service_j4ah4kb",
+      "template_hc6cpun",
       form.current,
-      "NlblmczVhV2Vxciv1"
+      "qOUTSphaEMIDp4QnT"
     )
     .then(
       (result) => {

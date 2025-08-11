@@ -19,7 +19,7 @@ const supportAreas = [
   },
   {
     icon: "❤️",
-    title: "Heal After Divorce or Separation",
+    title: "Emotional Healing",
     desc: "Release the pain and begin your journey of emotional healing.",
   },
   {
@@ -50,7 +50,7 @@ function AreasOfSupportWithCircle() {
         </div>
 
         {/* Mobile & Tablet Layout */}
-        <div className="block lg:hidden space-y-6 mt-10">
+        <div className="block   lg:hidden space-y-6 mt-10">
           {supportAreas.map((area, idx) => (
             <div
               key={idx}

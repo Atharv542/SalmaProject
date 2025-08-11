@@ -103,7 +103,8 @@ const VisionMission = () => {
 
               {/* Content */}
               <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                My mission is to guide men and women between the ages of 30 and 60 through the emotional layers of self-doubt, heartbreak, and limiting beliefs that often surface during life's major transitions. I create a safe, judgment-free space where clients can heal from past wounds, rewire unhelpful patterns, and reconnect with their true selves.
+                To guide men and women between the age of 25-60 through the process of letting go of heartbreak, limiting beliefs, and past wounds, helping them rebuild self-worth, embrace confidence, and create lasting transformation in their relationships and mindset.
+
               </p>
 
               {/* Key Points */}
@@ -152,7 +153,7 @@ const VisionMission = () => {
 
               {/* Content */}
               <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                My vision is to help men and women in their 30s to 60s heal emotionally, shift their mindset, and build conscious, fulfilling relationships—creating a ripple effect of peace, confidence, and connection in the world. I aim to empower individuals to reconnect with their inner strength and embrace emotional intelligence.
+                A world where every person feels emotionally free, deeply valued, and empowered to build relationships both with themselves and others rooted in self-love, respect, and authenticity.Where compassion flows naturally, creating spaces where everyone feels safe to grow.
               </p>
 
               {/* Key Points */}

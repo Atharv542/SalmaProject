@@ -93,17 +93,18 @@ function Home() {
             {/* Heading */}
             <motion.div variants={itemVariants}>
               <motion.h1
-                className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold italic leading-tight relative md:-mt-10"
+                className="text-3xl sm:text-2xl lg:text-3xl xl:text-5xl font-bold italic leading-tight relative md:-mt-10"
                 whileHover={{ scale: 1.02 }}
               >
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Heal.</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Let Go.</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Grow.</span>
+                <span className="bg-gradient-to-r  from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent ">Let Go.</span>{" "}
+                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Grow.</span>{" "}
+                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Tranform</span>{" "}
+                
 
                 <motion.div
                   className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-pink-500 rounded-full mx-auto lg:mx-0"
                   initial={{ width: 0 }}
-                  animate={{ width: "75%" }}
+                  animate={{ width: "90%" }}
                   transition={{ duration: 1.5, delay: 1 }}
                 />
               </motion.h1>
@@ -126,9 +127,9 @@ function Home() {
             </motion.div>
 
             {/* Benefits */}
-            <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 -mt-10 py-6" variants={itemVariants}>
+            <motion.div className="grid grid-cols-1 text-center sm:grid-cols-3 gap-4 -mt-10 py-6" variants={itemVariants}>
               {[
-                { icon: FaHeart, text: "Emotional Healing" },
+                { icon: FaHeart, text: "Heal After Divorce or Separation" },
                 { icon: FaShieldAlt, text: "Inner Strength" },
                 { icon: FaSeedling, text: "Personal Growth" }
               ].map((item, index) => (
