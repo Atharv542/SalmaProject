@@ -43,7 +43,7 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
     <div className="h-[calc(100vh-80px)] px-4 pt-40 bg-gray-50 flex items-center justify-center">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl border-t-4 border-pink-500 p-6 sm:p-8 overflow-hidden">
         <h2 className="text-2xl sm:text-3xl font-bold text-pink-500 text-center mb-4 sm:mb-6">
-          Book a Free Life Coaching Session
+          Book a Life Coaching Session
         </h2>
         <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
           {/* Full Name */}

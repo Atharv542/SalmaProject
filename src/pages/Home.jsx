@@ -93,20 +93,21 @@ function Home() {
             {/* Heading */}
             <motion.div variants={itemVariants}>
               <motion.h1
-                className="text-3xl sm:text-2xl lg:text-3xl xl:text-5xl font-bold italic leading-tight relative md:-mt-10"
+                className="text-2xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold italic leading-tight relative md:-mt-10"
                 whileHover={{ scale: 1.02 }}
               >
                 <span className="bg-gradient-to-r  from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent ">Let Go.</span>{" "}
                 <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Grow.</span>{" "}
                 <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Tranform</span>{" "}
+                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">and Evolve</span>{" "}
                 
 
-                <motion.div
+                {/*<motion.div
                   className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-pink-500 rounded-full mx-auto lg:mx-0"
                   initial={{ width: 0 }}
                   animate={{ width: "90%" }}
                   transition={{ duration: 1.5, delay: 1 }}
-                />
+                />*/}
               </motion.h1>
             </motion.div>
 
@@ -166,7 +167,7 @@ function Home() {
 
           {/* Image */}
           <motion.div className="flex justify-center lg:justify-end order-1 lg:order-2" variants={imageVariants} initial="hidden" animate="visible">
-            <div className="relative group max-w-md lg:max-w-lg xl:max-w-xl -mt-12">
+            <div className="relative group max-w-md lg:max-w-lg xl:max-w-xl -mt-12 md:-mt-18">
               <div className="absolute -inset-4 bg-gradient-to-r from-red-300/30 to-gray-300/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
               <motion.img
                 src="Main.jpg"
