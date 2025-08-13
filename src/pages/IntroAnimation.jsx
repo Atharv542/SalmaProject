@@ -241,7 +241,7 @@ useEffect(() => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 3, duration: 0.8 }}
               >
-                Let Go, Grow, Tranform
+                Let Go, Grow, Tranform and Evolve
               </motion.p>
               
               {/* Loading dots */}

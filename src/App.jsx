@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import AreasOfSupportWithCircle from './pages/Services';
 import Home from './pages/Home';
@@ -18,8 +18,19 @@ function AppWrapper() {
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const journeyRef = useRef(null);
-  const navigate= useNavigate()
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const [showPreloader, setShowPreloader] = useState(false);
+
+  useEffect(() => {
+    // Check if this is the first page load
+    const navigationType = window.performance.getEntriesByType("navigation")[0]?.type;
+    if (navigationType === "reload" || navigationType === "navigate") {
+      setShowPreloader(true);
+      setTimeout(() => setShowPreloader(false), 4500); // match your animation time
+    }
+  }, []);
 
   const scrollToSection = (section) => {
     if (section === 'home' && homeRef.current) {
@@ -33,73 +44,72 @@ function AppWrapper() {
     }
   };
 
-  // 👇 Handle scroll after route navigation (e.g., from /booking)
+  // Scroll to section after route navigation (from /booking)
   useEffect(() => {
-  const section = location.state?.sectionToScroll;
-  if (section) {
-    setTimeout(() => {
-      const el = document.getElementById(section);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-      navigate("/", { replace: true, state: null }); // clear state
-    }, 100);
-  }
-}, [location, navigate]);
+    const section = location.state?.sectionToScroll;
+    if (section) {
+      setTimeout(() => {
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+        navigate("/", { replace: true, state: null });
+      }, 2000);
+    }
+  }, [location, navigate]);
 
   return (
     <>
       <ScrollToTop />
       <Navbar scrollToSection={scrollToSection} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-                  <>
-      <Preloader />
-     
-    </>
-              <div style={{ paddingTop: '60px' }} ref={homeRef}>
-                <Home />
-              </div>
-              <div style={{  }} ref={contactRef}>
-                <AreasOfSupportWithCircle />
-              </div>
-              <div id="aboutme" style={{ }} ref={aboutRef}>
-                <AboutMe />
-              </div>
-              <div style={{ paddingTop: '10px' }}>
-                <VisionMission />
-              </div>
-              <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
-                <WhatToExpect />
-              </div>
-              <div className="pb-20 md:ml-20">
-                <TestimonialCarousel />
-              </div>
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/booking"
-          element={
-            <>
-              <div className='pb-20'>
-                <BookingForm />
-              </div>
-              <Footer />
-            </>
-          }
-        />
-      </Routes>
+      {showPreloader ? (
+        <Preloader />
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div style={{ paddingTop: '60px' }} ref={homeRef}>
+                  <Home />
+                </div>
+                <div id='services' ref={contactRef}>
+                  <AreasOfSupportWithCircle />
+                </div>
+                <div id="aboutme" ref={aboutRef}>
+                  <AboutMe />
+                </div>
+                <div>
+                  <VisionMission />
+                </div>
+                <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
+                  <WhatToExpect />
+                </div>
+                <div className="pb-20 md:ml-20">
+                  <TestimonialCarousel />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/booking"
+            element={
+              <>
+                <div className='pb-20'>
+                  <BookingForm />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      )}
       <Toaster />
     </>
   );
 }
 
-// Use wrapper so `useLocation` can work inside
 export default function App() {
   return (
     <Router>
