@@ -34,6 +34,11 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
     setShowPopup(true);
   };
 
+  const handlebooking=()=>{
+     setIsOpen(false);
+     navigate('/podcast-booking')
+  }
+
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -148,7 +153,7 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
               {/* Become a Guest Button (Mobile) */}
              <button
   type="button"
- onClick={()=>{navigate('/podcast-booking')}}
+ onClick={handlebooking}
   className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
 >
   <Mic className="h-4 w-4" /> Become a Guest
