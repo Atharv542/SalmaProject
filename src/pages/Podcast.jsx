@@ -273,7 +273,7 @@ export default function PodcastInvite({ youtubeUrl = "#" }) {
       {InviteCard}
 
       {/* Pop-up */}
-      <AnimatePresence>
+      {/*<AnimatePresence>
         {showPopup && (
           <motion.div
             className="fixed inset-0 bg-gradient-to-br from-black/40 via-rose-900/20 to-pink-900/20 backdrop-blur-sm flex items-center justify-center z-50 px-4"
@@ -299,7 +299,7 @@ export default function PodcastInvite({ youtubeUrl = "#" }) {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>*/}
     </>
   );
 }

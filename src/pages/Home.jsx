@@ -6,20 +6,18 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [buttonText, setButtonText] = useState("Start Your Journey Today");
+   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const updateButtonText = () => {
-      if (window.innerWidth <= 768) {
-        setButtonText("Start Your Journey");
-      } else {
-        setButtonText("Start Your Journey Today");
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
-    updateButtonText();
-    window.addEventListener("resize", updateButtonText);
-    return () => window.removeEventListener("resize", updateButtonText);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -146,22 +144,59 @@ function Home() {
             </motion.div>
 
             {/* CTA Button */}
-            <motion.div  variants={itemVariants} className="-mt-7">
-              <motion.button
-                onClick={() => navigate("/booking")}
-                className="group  relative cursor-pointer px-8 py-4 bg-transparent border-2 border-red-400 text-red-500 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-300">
-                  {buttonText}
-                  <motion.span className="group-hover:translate-x-1 transition-transform duration-300" whileHover={{ x: 5 }}>
-                    <FaArrowRightLong className="text-lg" />
-                  </motion.span>
-                </span>
-                {/* Hover background */}
-                <div className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
-              </motion.button>
+           <motion.div variants={itemVariants} className="-mt-7 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              {isMobile ? (
+             <div className="flex items-center justify-center gap-2 w-full max-w-xs mt-2 mx-auto">
+  {/* Start Journey Button */}
+  
+
+  {/* Become a Guest Button */}
+  <motion.button
+    onClick={() => navigate("/podcast-booking")}
+    className=" flex-1 min-w-0 px-3 py-3 bg-gray-600 border-2 border-gray-400 text-white rounded-lg font-semibold text-md"
+    whileHover={{ scale: 1.05, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <span className="relative z-10 flex items-center justify-center gap-1">
+      Become a Guest
+    </span>
+    <div className="absolute inset-0 bg-gray-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
+  </motion.button>
+
+  <motion.button
+    onClick={() => navigate("/booking")}
+    className="flex-1 min-w-0 px-3 py-3 bg-red-500 border-2 border-red-400 text-white rounded-lg font-semibold text-md"
+    whileHover={{ scale: 1.05, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <span className="relative z-10 flex items-center justify-center gap-1 ">
+      Connect Now
+      <motion.span whileHover={{ x: 3 }}>
+        <FaArrowRightLong className="text-xs" />
+      </motion.span>
+    </span>
+    <div className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
+  </motion.button>
+</div>
+
+
+              ) : (
+                // Desktop View - Single Button
+                <motion.button
+                  onClick={() => navigate("/booking")}
+                  className="group px-8 py-4 bg-transparent border-2 border-red-400 text-red-500 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="relative z-10 flex items-center gap-3 cursor-pointer group-hover:text-white transition-colors duration-300">
+                    Start Your Journey Today
+                    <motion.span whileHover={{ x: 5 }}>
+                      <FaArrowRightLong className="text-lg" />
+                    </motion.span>
+                  </span>
+                  <div className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
+                </motion.button>
+              )}
             </motion.div>
           </motion.div>
 

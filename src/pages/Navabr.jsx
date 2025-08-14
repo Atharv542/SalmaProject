@@ -60,7 +60,7 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18">
-            <img src="Logo5.png" className="h-17 ml-5 mt-1" alt="Logo" />
+            <img src="Logo5.png" className="h-15 md:h-17 md:ml-5 mt-1" alt="Logo" />
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6">
@@ -82,7 +82,7 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
              <button
   type="button"
   onClick={()=>{navigate('/podcast-booking')}}
-  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
+  className="inline-flex items-center gap-2 cursor-pointer rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
 >
   <Mic className="h-4 w-4" /> Become a Guest
 </button>
@@ -101,7 +101,7 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/50 z-40 mt-2 transition-opacity duration-300 md:hidden ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
@@ -151,13 +151,7 @@ const Navbar = ({ scrollToSection, openPodcastPopup }) => {
               })}
 
               {/* Become a Guest Button (Mobile) */}
-             <button
-  type="button"
- onClick={handlebooking}
-  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
->
-  <Mic className="h-4 w-4" /> Become a Guest
-</button>
+           
             </div>
           </div>
 
