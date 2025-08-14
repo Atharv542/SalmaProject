@@ -12,6 +12,7 @@ import WhatToExpect from './pages/WhatToExpect';
 import Footer from './pages/Footer';
 import TestimonialCarousel from './pages/Testimonial';
 import Preloader from './pages/IntroAnimation';
+import PodcastInvite from './pages/Podcast';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -58,56 +59,91 @@ function AppWrapper() {
     }
   }, [location, navigate]);
 
-  return (
-    <>
-      <ScrollToTop />
-      <Navbar scrollToSection={scrollToSection} />
-      {showPreloader ? (
-        <Preloader />
-      ) : (
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <div style={{ paddingTop: '60px' }} ref={homeRef}>
-                  <Home />
-                </div>
-                <div id='services' ref={contactRef}>
-                  <AreasOfSupportWithCircle />
-                </div>
-                <div id="aboutme" ref={aboutRef}>
-                  <AboutMe />
-                </div>
-                <div>
-                  <VisionMission />
-                </div>
-                <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
-                  <WhatToExpect />
-                </div>
-                <div className="pb-20 md:ml-20">
-                  <TestimonialCarousel />
-                </div>
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/booking"
-            element={
-              <>
-                <div className='pb-20'>
-                  <BookingForm />
-                </div>
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-      )}
-      <Toaster />
-    </>
-  );
+  // In AppWrapper
+const [isPodcastOpen, setIsPodcastOpen] = useState(false);
+
+return (
+  <>
+    <ScrollToTop />
+   <Navbar
+  scrollToSection={scrollToSection}
+  openPodcastPopup={() => setIsPodcastOpen(true)} // ✅ name matches Navbar
+/>
+    {showPreloader ? (
+      <Preloader />
+    ) : (
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div style={{ paddingTop: '60px' }} ref={homeRef}>
+                <Home />
+              </div>
+              <div id='services' ref={contactRef}>
+                <AreasOfSupportWithCircle />
+              </div>
+              <div id="aboutme" ref={aboutRef}>
+                <AboutMe />
+              </div>
+            
+              <div>
+                <VisionMission />
+              </div>
+              <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
+                <WhatToExpect />
+              </div>
+              <div className="pb-20 md:ml-20">
+                <TestimonialCarousel />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/booking"
+          element={
+            <>
+              <div className='pb-20'>
+                <BookingForm />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+         <Route
+          path="/podcast-booking"
+          element={
+            <>
+              <div className='pt-24 pb-5'>
+              <PodcastInvite youtubeUrl="https://www.youtube.com/@salmanisha2025" />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    )}
+
+    {/* Podcast Modal */}
+    {isPodcastOpen && (
+      <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+        <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative">
+          <button
+            className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+            onClick={() => setIsPodcastOpen(false)}
+          >
+            ✕
+          </button>
+          <PodcastInvite youtubeUrl="https://www.youtube.com/@salmanisha2025" />
+        </div>
+      </div>
+    )}
+
+    <Toaster />
+  </>
+);
+
 }
 
 export default function App() {

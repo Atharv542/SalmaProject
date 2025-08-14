@@ -98,7 +98,7 @@ function Home() {
               >
                 <span className="bg-gradient-to-r  from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent ">Let Go.</span>{" "}
                 <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Grow.</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Tranform</span>{" "}
+                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Transform</span>{" "}
                 <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">and Evolve</span>{" "}
                 
 
@@ -119,7 +119,7 @@ function Home() {
             {/* Description */}
             <motion.div className="space-y-4 -mt-5" variants={itemVariants}>
               <p className="text-base sm:text-lg lg:text-xl italic text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                You’re ready to let go of the pain, the doubts, and the beliefs that keep you stuck?
+                Ready to let go of the pain, the doubts, and the beliefs that keep you stuck?
 
               </p>
               <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 md:-mt-2">

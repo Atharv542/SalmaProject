@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Home, Heart, User, Compass } from "lucide-react";
+import { Menu, X, Home, Heart, User, Compass, Mic } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Navbar = ({ scrollToSection }) => {
+const Navbar = ({ scrollToSection, openPodcastPopup }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+
 
   const navigate = useNavigate();
   const location = useLocation();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +30,13 @@ const Navbar = ({ scrollToSection }) => {
       scrollToSection(section);
     }
   };
+   const openPopup = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
   const navItems = [
     { label: "Home", icon: Home, section: "home" },
@@ -37,21 +48,17 @@ const Navbar = ({ scrollToSection }) => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${"bg-[#F7F7F7] backdrop-blur-md shadow-xl border-b border-rose-100"}`}>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          "bg-white backdrop-blur-md shadow-xl border-b border-rose-100"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <img src="Logo3.png" className=" h-15 ml-5"/>
-            <div className="flex items-center gap-5">
-          
-            {/*<div className={`text-2xl md:text-4xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-white"}`}>
-              <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Coaching</span>
-              <span className="text-gray-800"> with Salma</span>
-            </div>*/}
-            </div>
-           
+          <div className="flex justify-between items-center h-18">
+            <img src="Logo5.png" className="h-17 ml-5 mt-1" alt="Logo" />
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
@@ -65,6 +72,15 @@ const Navbar = ({ scrollToSection }) => {
                   </button>
                 );
               })}
+
+              {/* Become a Guest Button */}
+             <button
+  type="button"
+  onClick={()=>{navigate('/podcast-booking')}}
+  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
+>
+  <Mic className="h-4 w-4" /> Become a Guest
+</button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -80,13 +96,17 @@ const Navbar = ({ scrollToSection }) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 md:hidden ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 md:hidden ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
@@ -124,6 +144,15 @@ const Navbar = ({ scrollToSection }) => {
                   </button>
                 );
               })}
+
+              {/* Become a Guest Button (Mobile) */}
+             <button
+  type="button"
+ onClick={()=>{navigate('/podcast-booking')}}
+  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-3 text-sm font-bold text-white shadow-xl"
+>
+  <Mic className="h-4 w-4" /> Become a Guest
+</button>
             </div>
           </div>
 
@@ -132,9 +161,13 @@ const Navbar = ({ scrollToSection }) => {
             <div className="text-center">
               <div className="flex items-center justify-center space-x-1 mb-2">
                 <span className="text-2xl">🌸</span>
-                <span className="text-gray-600 font-medium">Transform your life</span>
+                <span className="text-gray-600 font-medium">
+                  Transform your life
+                </span>
               </div>
-              <p className="text-sm text-gray-500">Your healing journey starts here</p>
+              <p className="text-sm text-gray-500">
+                Your healing journey starts here
+              </p>
             </div>
           </div>
         </div>
@@ -145,6 +178,7 @@ const Navbar = ({ scrollToSection }) => {
 
 Navbar.propTypes = {
   scrollToSection: PropTypes.func.isRequired,
+  openPodcastPopup: PropTypes.func.isRequired,
 };
 
 export default Navbar;
