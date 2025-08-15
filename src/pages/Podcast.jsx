@@ -10,7 +10,7 @@ import {
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import emailjs from "@emailjs/browser";
 export default function PodcastInvite({ youtubeUrl = "#" }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -24,24 +24,31 @@ export default function PodcastInvite({ youtubeUrl = "#" }) {
   const closePopup = () => setShowPopup(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    const form = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(form.entries());
+  const form = new FormData(e.currentTarget);
+  const payload = Object.fromEntries(form.entries());
 
-    try {
-      await new Promise((r) => setTimeout(r, 800)); // Simulated API
-      console.log("Form submitted:", payload);
-      setSubmitted(true);
-      e.currentTarget.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    // Send form data to EmailJS
+    await emailjs.send(
+      "service_iqlskp8",   // Replace with your EmailJS service ID
+      "template_kfbi15o",  // Replace with your EmailJS template ID
+      payload,             // The object with form data
+      "NlblmczVhV2Vxciv1"    // Replace with your EmailJS public key
+    );
+
+    console.log("Form submitted:", payload);
+    setSubmitted(true);
+    e.currentTarget.reset();
+  } catch (err) {
+    console.error("EmailJS Error:", err);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const InviteCard = (
     <motion.div

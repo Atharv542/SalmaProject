@@ -2,42 +2,69 @@ import React, { useState, useRef } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import emailjs from "@emailjs/browser";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import { PopupModal } from "react-calendly";
 
 const BookingForm = () => {
-  const [phone, setPhone] = useState("");
-  const form = useRef(null);
+  const formRef = useRef(null);
+  const [isCalendlyOpen, setCalendlyOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-if (!phone || phone.replace(/\D/g, "").length < 10) {
-  toast.error("Please enter a valid phone number.");
-  return;
-}
+    // Phone number validation
+    if (!formData.phone || formData.phone.replace(/\D/g, "").length < 10) {
+      toast.error("Please enter a valid phone number.");
+      return;
+    }
 
-  emailjs
-    .sendForm(
-      "service_j4ah4kb",
-      "template_hc6cpun",
-      form.current,
-      "qOUTSphaEMIDp4QnT"
-    )
-    .then(
-      (result) => {
-        console.log("Email sent:", result.text);
-        toast.success("Your appointment form is submitted! Please select a time slot.");
-        form.current.reset();
-        setPhone(""); // clear phone manually
-      },
-      (error) => {
-        console.error("Email error:", error.text);
+    // 1st email: send details to admin
+    emailjs
+      .sendForm(
+        "service_j4ah4kb", // your admin email service ID
+        "template_hc6cpun", // your admin template ID
+        formRef.current,
+        "qOUTSphaEMIDp4QnT"
+      )
+      .then(() => {
+        toast.success(
+          "Your appointment form is submitted! Please select a time slot."
+        );
+        setCalendlyOpen(true);
+      })
+      .catch(() => {
         toast.error("Something went wrong. Please try again.");
-      }
-      
-    );
-   
-};
+      });
+
+    // 2nd email: confirmation to user
+    emailjs
+      .sendForm(
+        "service_gt2m8ga", // your user confirmation service ID
+        "template_6wjpyat", // your user confirmation template ID
+        formRef.current,
+        "9VVB2mfBIGm2-ol8-" // your user public key
+      )
+      .then(() => {
+        console.log("Confirmation email sent to user");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+ 
+
+  const calendlyURL = ` https://calendly.com/atharvr808/30min?name=${encodeURIComponent(
+    formData.name
+  )}&email=${encodeURIComponent(formData.email)}&a1=${encodeURIComponent(
+    formData.message
+  )}`;
 
   return (
     <div className="h-[calc(100vh-80px)] px-4 pt-40 bg-gray-50 flex items-center justify-center">
@@ -45,17 +72,28 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
         <h2 className="text-2xl sm:text-3xl font-bold text-pink-500 text-center mb-4 sm:mb-6">
           Book a Life Coaching Session
         </h2>
-        <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="space-y-4 sm:space-y-6"
+        >
           {/* Full Name */}
           <div>
-            <label htmlFor="name" className="block text-black font-semibold mb-1">
+            <label
+              htmlFor="name"
+              className="block text-black font-semibold mb-1"
+            >
               Full Name <span className="text-red-600">*</span>
             </label>
             <input
               type="text"
               id="name"
-              name="user_name"
+              name="name"
               placeholder="Enter your full name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             />
@@ -63,28 +101,35 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-black font-semibold mb-1">
+            <label
+              htmlFor="email"
+              className="block text-black font-semibold mb-1"
+            >
               Email Address <span className="text-red-600">*</span>
             </label>
             <input
               type="email"
               id="email"
-              name="user_email"
+              name="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             />
           </div>
 
-          {/* Phone Number with Country Code */}
+          {/* Phone Number */}
           <div>
             <label className="block text-black font-semibold mb-1">
               Phone Number <span className="text-red-600">*</span>
             </label>
             <PhoneInput
               country={"in"}
-              value={phone}
-              onChange={setPhone}
+              value={formData.phone}
+              onChange={(phone) => setFormData({ ...formData, phone })}
               inputClass="!w-full !h-12 !text-sm"
               inputStyle={{
                 width: "100%",
@@ -93,9 +138,8 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
               }}
               enableSearch={true}
               specialLabel={null}
-              
               inputProps={{
-                name: "user_phone",
+                name: "phone",
               }}
               required
             />
@@ -103,7 +147,10 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-black font-semibold mb-1">
+            <label
+              htmlFor="message"
+              className="block text-black font-semibold mb-1"
+            >
               Your Message <span className="text-red-600">*</span>
             </label>
             <textarea
@@ -111,6 +158,10 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
               name="message"
               rows="3"
               placeholder="Tell us how we can help you"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
               required
             ></textarea>
@@ -125,12 +176,18 @@ if (!phone || phone.replace(/\D/g, "").length < 10) {
           </button>
         </form>
       </div>
+
+      {/* Calendly Popup */}
+      <PopupModal
+        url={calendlyURL}
+        onModalClose={() => setCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById("root")}
+      />
+
+      <Toaster position="top-center" />
     </div>
   );
 };
 
 export default BookingForm;
-
-
-
-
