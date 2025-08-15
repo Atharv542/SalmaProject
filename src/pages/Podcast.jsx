@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Mic2,
   PlayCircle,
@@ -11,10 +11,12 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 export default function PodcastInvite({ youtubeUrl = "#" }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+    const formRef = useRef(); 
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPopup(true), 7000);
@@ -40,11 +42,12 @@ export default function PodcastInvite({ youtubeUrl = "#" }) {
     );
 
     console.log("Form submitted:", payload);
+    toast.success("Your request has been submitted")
+     formRef.current?.reset();
     setSubmitted(true);
-    e.currentTarget.reset();
   } catch (err) {
     console.error("EmailJS Error:", err);
-    alert("Something went wrong. Please try again.");
+    toast.error("Something went wrong. Please try again.");
   } finally {
     setLoading(false);
   }
