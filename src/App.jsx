@@ -13,6 +13,7 @@ import Footer from './pages/Footer';
 import TestimonialCarousel from './pages/Testimonial';
 import Preloader from './pages/IntroAnimation';
 import PodcastInvite from './pages/Podcast';
+import CertificateSection from './pages/Certificate';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -86,7 +87,7 @@ return (
               <div id="aboutme" ref={aboutRef}>
                 <AboutMe />
               </div>
-            
+            <CertificateSection/>
               <div>
                 <VisionMission />
               </div>

@@ -190,6 +190,7 @@ const VisionMission = () => {
             <span className="text-red-700 font-semibold">Ready to transform your life?</span>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
