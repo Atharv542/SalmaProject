@@ -82,6 +82,26 @@ const TestimonialCarousel = () => {
             </div>
           </SwiperSlide>
 
+          {/* Video Testimonial 2 */}
+          <SwiperSlide>
+            <div
+              className="flex justify-center items-center h-full"
+              onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+              onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+            >
+              <div className="w-full max-w-lg">
+                <video
+                  className="w-full max-h-100 rounded-lg shadow-lg"
+                  controls
+                  muted
+                >
+                  <source src="/Testimonial3.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </SwiperSlide>
+
           {/* Keep all commented sections intact */}
           {/* Video Testimonial 3 */}
           {/*<SwiperSlide> ... </SwiperSlide>*/}
