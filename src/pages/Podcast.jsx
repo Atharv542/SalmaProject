@@ -35,7 +35,7 @@ export default function PodcastInvite({ youtubeUrl = "#" }) {
   try {
     // Send form data to EmailJS
     await emailjs.send(
-      "service_iqlskp8",   // Replace with your EmailJS service ID
+      "service_dja4r7f",   // Replace with your EmailJS service ID
       "template_kfbi15o",  // Replace with your EmailJS template ID
       payload,             // The object with form data
       "NlblmczVhV2Vxciv1"    // Replace with your EmailJS public key
