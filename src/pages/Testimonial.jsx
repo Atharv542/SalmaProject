@@ -110,7 +110,38 @@ const TestimonialCarousel = () => {
           {/* Video Testimonial 5 */}
           {/*<SwiperSlide> ... </SwiperSlide>*/}
           {/* Text Testimonial 1 */}
-          {/*<SwiperSlide> ... </SwiperSlide>*/}
+           <SwiperSlide>
+            <div
+              className="flex justify-center items-center h-full"
+              onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+              onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+            >
+              <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+                {/* User Photo */}
+                <div className="flex flex-col items-center justify-center  gap-2 mb-1">
+                  <img
+                    src="/George.png" // Update with actual image path
+                    alt="Ola Dayoub"
+                    className="w-18 h-18 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-red-500">
+                      George Gengler
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {" "}
+                       Wisconsin, USA
+                    </p>
+                  </div>
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-base md:text-md text-gray-700 leading-relaxed">
+                  "After just three sessions with Salma,I have to say my relationship with my two daughters has been reshaped.Salma was present,asked great questions and made me feel safe to open about my fear as a father.I now have some tools to use in my father daughter&relationship which gives me more insight into how I can be more present for them as they leave the nest.If you neeed support in life or relationship transitions, I highly suggest Salma."
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
           {/* Text Testimonial 2 */}
           {/*<SwiperSlide> ... </SwiperSlide>*/}
           {/* Text Testimonial 3 */}
