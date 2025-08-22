@@ -96,10 +96,11 @@ return (
               <div className="pb-20 md:ml-20" id="yourjourney" ref={journeyRef}>
                 <WhatToExpect />
               </div>
+               <PricingCard/>
               <div className="pb-20 md:ml-20">
                 <TestimonialCarousel />
               </div>
-              {/*<PricingCard/>*/}
+             
               <FAQ/>
               <Footer />
             </>
