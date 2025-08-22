@@ -105,7 +105,7 @@ export default function FAQ() {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full mb-6 shadow-2xl">
             <HelpCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-red-500 drop-shadow-sm mb-6">
+          <h1 className="text-3xl md:text-6xl leading-[1.5] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-red-500 drop-shadow-sm mb-6">
             Frequently Asked Questions
           </h1>
           <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">

@@ -15,6 +15,7 @@ import Preloader from './pages/IntroAnimation';
 import PodcastInvite from './pages/Podcast';
 import CertificateSection from './pages/Certificate';
 import FAQ from './pages/FAQ';
+import PricingCard from './pages/Pricing';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -98,6 +99,7 @@ return (
               <div className="pb-20 md:ml-20">
                 <TestimonialCarousel />
               </div>
+              {/*<PricingCard/>*/}
               <FAQ/>
               <Footer />
             </>

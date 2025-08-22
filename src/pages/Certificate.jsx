@@ -29,7 +29,7 @@ const CertificateSection = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl  md:text-5xl font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-600 bg-clip-text text-transparent mb-4">
+        <h2 className="text-4xl  md:text-5xl font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-600 bg-clip-text text-transparent mb-4 leading-[1.5]">
           My Certification
         </h2>
         <motion.div

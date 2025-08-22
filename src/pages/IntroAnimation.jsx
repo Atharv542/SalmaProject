@@ -140,7 +140,7 @@ useEffect(() => {
            <motion.div
   className="relative mb-8"
   initial={{ y: 0 }}
-  animate={{ x: isMobile ? -90 : 250,y:isMobile ? -110 :-20, scale: 0.9, opacity: 0.8 }}
+  animate={{ x: isMobile ? -90 : 260,y:isMobile ? -110 :-5, scale: 0.9, opacity: 0.8 }}
   transition={{ delay: 2.2, duration: 1, ease: "easeOut" }}
 >
               <svg
@@ -232,7 +232,7 @@ useEffect(() => {
               initial="hidden"
               animate="visible"
             >
-              <h1 className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">
+              <h1 className="text-2xl leading-[1.5] md:text-5xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">
                 The InnerBloom Journey
               </h1>
               <motion.p
