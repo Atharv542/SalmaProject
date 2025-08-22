@@ -6,6 +6,12 @@ import toast, { Toaster } from "react-hot-toast";
 import { PopupModal } from "react-calendly";
 
 const BookingForm = () => {
+  const initialData={
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  }
   const formRef = useRef(null);
   const [isCalendlyOpen, setCalendlyOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -36,6 +42,7 @@ const BookingForm = () => {
         toast.success(
           "Your appointment form is submitted! Please select a time slot."
         );
+        setFormData(initialData);
         setCalendlyOpen(true);
       })
       .catch(() => {
@@ -45,10 +52,10 @@ const BookingForm = () => {
     // 2nd email: confirmation to user
     emailjs
       .sendForm(
-        "", // your user confirmation service ID
-        "", // your user confirmation template ID
+        "service_m2mqngm", // your user confirmation service ID
+        "template_inmmn0l", // your user confirmation template ID
         formRef.current,
-        "" // your user public key
+        "akzRyfz66xpuRZCnF" // your user public key
       )
       .then(() => {
         console.log("Confirmation email sent to user");
