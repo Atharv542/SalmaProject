@@ -134,7 +134,7 @@ const BookingForm = () => {
               Phone Number <span className="text-red-600">*</span>
             </label>
             <PhoneInput
-              country={"in"}
+              country={"us"}
               value={formData.phone}
               onChange={(phone) => setFormData({ ...formData, phone })}
               inputClass="!w-full !h-12 !text-sm"
