@@ -67,7 +67,7 @@ const BookingForm = () => {
 
  
 
-  const calendlyURL = ` https://calendly.com/atharvr808/30min?name=${encodeURIComponent(
+  const calendlyURL = ` https://calendly.com/theinnerbloomjourney07/30min?name=${encodeURIComponent(
     formData.name
   )}&email=${encodeURIComponent(formData.email)}&a1=${encodeURIComponent(
     formData.message
