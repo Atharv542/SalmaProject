@@ -52,10 +52,10 @@ const BookingForm = () => {
     // 2nd email: confirmation to user
     emailjs
       .sendForm(
-        "service_m2mqngm", // your user confirmation service ID
-        "template_inmmn0l", // your user confirmation template ID
+        "service_uvppv08", // your user confirmation service ID
+        "template_bsise4b", // your user confirmation template ID
         formRef.current,
-        "akzRyfz66xpuRZCnF" // your user public key
+        "Xiw_0hrsusl32926Z" // your user public key
       )
       .then(() => {
         console.log("Confirmation email sent to user");
