@@ -55,7 +55,7 @@ const BookingForm = () => {
         "service_uvppv08", // your user confirmation service ID
         "template_bsise4b", // your user confirmation template ID
         formRef.current,
-        "Xiw_0hrsusl32926Z" // your user public key
+        "Xiw_0hrsusI32926Z" // your user public key
       )
       .then(() => {
         console.log("Confirmation email sent to user");
