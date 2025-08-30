@@ -21,49 +21,61 @@ const BookingForm = () => {
     message: "",
   });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+ const sendEmail = (e) => {
+  e.preventDefault();
 
-    // Phone number validation
-    if (!formData.phone || formData.phone.replace(/\D/g, "").length < 10) {
-      toast.error("Please enter a valid phone number.");
-      return;
-    }
+  // Phone number validation
+  if (!formData.phone || formData.phone.replace(/\D/g, "").length < 10) {
+    toast.error("Please enter a valid phone number.");
+    return;
+  }
 
-    // 1st email: send details to admin
-    emailjs
-      .sendForm(
-        "service_j4ah4kb", // your admin email service ID
-        "template_hc6cpun", // your admin template ID
-        formRef.current,
-        "qOUTSphaEMIDp4QnT"
-      )
-      .then(() => {
-        toast.success(
-          "Your appointment form is submitted! Please select a time slot."
-        );
-        setFormData(initialData);
-        setCalendlyOpen(true);
-      })
-      .catch(() => {
-        toast.error("Something went wrong. Please try again.");
-      });
+  // Admin email
+  emailjs
+    .send(
+      "service_j4ah4kb", // admin service ID
+      "template_hc6cpun", // admin template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      },
+      "qOUTSphaEMIDp4QnT"
+    )
+    .then(() => {
+      toast.success(
+        "Your appointment form is submitted! Please select a time slot."
+      );
+      setCalendlyOpen(true);
 
-    // 2nd email: confirmation to user
-    emailjs
-      .sendForm(
-        "service_uvppv08", // your user confirmation service ID
-        "template_bsise4b", // your user confirmation template ID
-        formRef.current,
-        "Xiw_0hrsusI32926Z" // your user public key
-      )
-      .then(() => {
-        console.log("Confirmation email sent to user");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+      // Send confirmation email to user
+      emailjs
+        .send(
+          "service_uvppv08", // user confirmation service ID
+          "template_bsise4b", // user confirmation template ID
+          {
+            email: formData.email, // must match variable in EmailJS template
+            name: formData.name,
+            message: formData.message,
+          },
+          "Xiw_0hrsusI32926Z"
+        )
+        .then(() => {
+          console.log("Confirmation email sent to user");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // Reset form
+      setFormData(initialData);
+    })
+    .catch(() => {
+      toast.error("Something went wrong. Please try again.");
+    });
+};
+
 
  
 
