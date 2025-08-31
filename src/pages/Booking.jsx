@@ -49,7 +49,7 @@ const BookingForm = () => {
       );
       setCalendlyOpen(true);
 
-      // Send confirmation email to user
+      
       // Send confirmation email to user
 emailjs
   .send(

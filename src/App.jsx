@@ -16,6 +16,9 @@ import PodcastInvite from './pages/Podcast';
 import CertificateSection from './pages/Certificate';
 import FAQ from './pages/FAQ';
 import PricingCard from './pages/Pricing';
+import CookiesPage from './pages/CookiesPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 
 function AppWrapper() {
   const homeRef = useRef(null);
@@ -80,7 +83,7 @@ return (
           path="/"
           element={
             <>
-              <div style={{ paddingTop: '60px' }} ref={homeRef}>
+              <div style={{ paddingTop: '60px' }} id='home' ref={homeRef}>
                 <Home />
               </div>
               <div id='services' ref={contactRef}>
@@ -123,6 +126,39 @@ return (
             <>
               <div className='pt-24 pb-5'>
               <PodcastInvite youtubeUrl="https://www.youtube.com/@salmanisha2025" />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/cookies"
+          element={
+            <>
+              <div className='pt-10'>
+              <CookiesPage/>
+              </div>
+              <Footer />
+            </>
+          }
+        />
+         <Route
+          path="/privacy"
+          element={
+            <>
+              <div className='pt-10 '>
+              <PrivacyPage/>
+              </div>
+              <Footer />
+            </>
+          }
+        />
+         <Route
+          path="/terms"
+          element={
+            <>
+              <div className='pt-10 '>
+              <TermsPage/>
               </div>
               <Footer />
             </>
