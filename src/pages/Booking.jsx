@@ -50,23 +50,26 @@ const BookingForm = () => {
       setCalendlyOpen(true);
 
       // Send confirmation email to user
-      emailjs
-        .send(
-          "service_uvppv08", // user confirmation service ID
-          "template_bsise4b", // user confirmation template ID
-          {
-            email: formData.email, // must match variable in EmailJS template
-            name: formData.name,
-            message: formData.message,
-          },
-          "Xiw_0hrsusI32926Z"
-        )
-        .then(() => {
-          console.log("Confirmation email sent to user");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      // Send confirmation email to user
+emailjs
+  .send(
+    "service_uvppv08", // user confirmation service ID
+    "template_bsise4b", // user confirmation template ID
+    {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,   // ✅ Added this
+      message: formData.message,
+    },
+    "Xiw_0hrsusI32926Z"
+  )
+  .then(() => {
+    console.log("Confirmation email sent to user");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 
       // Reset form
       setFormData(initialData);
