@@ -19,6 +19,11 @@ const CertificateSection = () => {
 
   const certificates = [
     {
+      src: "Certificate.png",
+      title: "Professional Life Coach Certification",
+      issuer: "Jay Shetty Certification School",
+    },
+    {
       src: "certificate.jpg",
       title: "Professional Life Coach Certification",
       issuer: "International Coach Federation",
@@ -88,7 +93,7 @@ const CertificateSection = () => {
                     key={certificates[index].src}
                     src={certificates[index].src}
                     alt={certificates[index].title}
-                    className="w-full h-full object-cover rounded-xl absolute top-0 left-0"
+                    className="w-full h-full object-fit rounded-xl absolute top-0 left-0"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
@@ -224,7 +229,7 @@ const CertificateSection = () => {
                     key={certificates[index].src}
                     src={certificates[index].src}
                     alt={certificates[index].title}
-                    className="w-full h-full object-cover rounded-xl absolute top-0 left-0"
+                    className="w-full h-full object-fit rounded-xl absolute top-0 left-0"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
