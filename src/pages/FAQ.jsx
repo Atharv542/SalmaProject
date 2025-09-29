@@ -23,22 +23,19 @@ const faqs = [
     ),
   },
   {
-    question: "What is a life coach?",
+    question: "Who is a life coach?",
     icon: <Heart className="w-6 h-6" />,
     answer: (
       <div className="space-y-3">
         <div className="flex items-center space-x-3">
           <div className="w-2 h-2 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full"></div>
-          <p className="text-gray-700">A supportive guide who helps you move forward with purpose and intention</p>
+          <p className="text-gray-700">A life coach is a trained professional who helps people bridge the gap between where they are now and where they want to be in life.</p>
         </div>
         <div className="flex items-center space-x-3">
           <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-500 rounded-full"></div>
-          <p className="text-gray-700">Encourages action, personal growth, and positive mindset shifts</p>
+          <p className="text-gray-700">Unlike therapy, which often focuses on healing past wounds, life coaching is future-oriented and centered on personal growth, mindset shifts, and goal achievement.</p>
         </div>
-        <div className="flex items-center space-x-3">
-          <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-rose-500 rounded-full"></div>
-          <p className="text-gray-700">Partners with you to create lasting, meaningful change in your life</p>
-        </div>
+        
       </div>
     ),
   },

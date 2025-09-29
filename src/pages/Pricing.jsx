@@ -4,7 +4,7 @@ import { Clock, Star, Calendar, BookOpen, Target, Users } from 'lucide-react';
 const PricingCard = () => {
   const pricingPlans = [
     {
-      duration: '6 Weeks',
+      duration: '6 to 8 Weeks',
       price: 'Starting at $299',
       sessions: 'Weekly 60-min Zoom',
       popular: false,
@@ -25,7 +25,7 @@ const PricingCard = () => {
         '📈 Extended accountability & mentoring',
         '🎨 Advanced personalized worksheets',
         '⚡ Priority support & faster responses',
-        '💯 Success guarantee or money back'
+        
       ]
     }
   ];
