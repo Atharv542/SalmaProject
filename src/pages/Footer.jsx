@@ -31,7 +31,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-gray-800">The Inner Bloom Journey</span>
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
-              Guiding you on a transformative journey to unlock your full potential and live a life of purpose, meaning, and fulfillment through certified Life and Therapy Coaching.
+              Guiding you on a transformative journey to unlock your full potential and live a life of purpose, meaning, and fulfillment through certified Life Coaching.
             </p>
             <div className="flex items-center space-x-2 text-gray-600">
               <Mail className="h-4 w-4" />
