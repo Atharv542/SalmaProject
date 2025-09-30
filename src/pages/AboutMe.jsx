@@ -121,7 +121,7 @@ const AboutSection = () => {
               <motion.img
                 src="SalmaAboutMe.jpg"
                 alt="Professional Life Coach"
-                className="relative -mt-40 rounded-2xl shadow-2xl w-full h-[450px] sm:h-[550px] lg:h-[650px] object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl"
+                className="relative -mt-40 rounded-2xl shadow-2xl w-full h-[480px] sm:h-[550px] lg:h-[680px] object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
               />
