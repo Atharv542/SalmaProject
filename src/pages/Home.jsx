@@ -66,12 +66,12 @@ const navigate= useNavigate();
             {/* Description */}
             <div className="space-y-5 animate-fade-in-delay">
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                At The Inner Bloom Journey, we guide you to heal, let go, and evolve — from heartbreak, self-doubt, or limiting beliefs that hold you back.
+                At The Inner Bloom Journey, we guide you to let go, and evolve — from heartbreak, self-doubt, or limiting beliefs that hold you back.
               </p>
 
               <div className="space-y-3">
                 <p className="text-base sm:text-lg font-medium text-gray-800">
-                  As a Mindset & Relationship Breakthrough Coach, I help you:
+                  As a Mindset & Relationship Breakthrough Coach, together we can:
                 </p>
                 <div className="space-y-2.5">
                   {[
