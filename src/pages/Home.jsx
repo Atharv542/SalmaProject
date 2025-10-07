@@ -1,218 +1,187 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { FaArrowRightLong, FaHeart, FaSeedling } from "react-icons/fa6";
-import { FaShieldAlt } from "react-icons/fa";
+import { ArrowRight, Sparkles, Heart, Shield, Leaf } from "lucide-react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 function Home() {
-  const [buttonText, setButtonText] = useState("Start Your Journey Today");
-   const [isMobile, setIsMobile] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
+const navigate= useNavigate();
+  const handleConnectNow = () => {
+    navigate("/booking");
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8, x: 50 },
-    visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: "easeOut", delay: 0.5 } },
-  };
-
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-  };
-
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+  const handleBecomeGuest = () => {
+    navigate("/podcast-booking");
   };
 
   return (
     <section className="relative bg-gradient-to-br from-gray-100 via-white to-gray-50 text-gray-800 min-h-screen flex items-center overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Main radial glow */}
-        <motion.div
-          className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-red-200/30 via-red-100/20 to-gray-200/30 rounded-full blur-3xl"
-          animate={pulseAnimation}
-        />
-        {/* Secondary glows */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-red-100/30 to-gray-200/30 rounded-full blur-2xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-gray-200/20 to-red-100/20 rounded-full blur-3xl" />
-        {/* Floating particles */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-2 h-2 bg-red-300/50 rounded-full"
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0 } }}
-        />
-        <motion.div
-          className="absolute top-3/4 left-1/4 w-1 h-1 bg-red-200/70 rounded-full"
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-gray-300/60 rounded-full"
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 2 } }}
-        />
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-br from-red-200/30 via-red-100/20 to-gray-200/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-red-100/30 to-gray-200/30 rounded-full blur-2xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-gray-200/20 to-red-100/20 rounded-full blur-3xl" />
+
+        {/* Floating decorative elements */}
+        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-red-400/60 rounded-full animate-float" />
+        <div className="absolute top-3/4 left-1/4 w-2 h-2 bg-red-300/70 rounded-full animate-float-delayed" />
+        <div className="absolute top-1/2 right-1/3 w-2.5 h-2.5 bg-red-200/60 rounded-full animate-float-slow" />
+        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-gray-400/50 rounded-full animate-float" />
       </div>
 
       {/* Overlay for subtle contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-white/60" />
 
       {/* Content */}
-      <div className="relative mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-16 w-full max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 py-12 lg:py-20 w-full max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-start lg:items-center">
 
           {/* Text Section */}
-          <motion.div
-            className="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {/* Heading */}
-            <motion.div variants={itemVariants}>
-              <motion.h1
-                className="text-2xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold italic leading-tight relative md:-mt-10"
-                whileHover={{ scale: 1.02 }}
-              >
-                <span className="bg-gradient-to-r  from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent ">Let Go.</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Grow.</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">Transform</span>{" "}
-                <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 bg-clip-text text-transparent">and Evolve</span>{" "}
-                
+          <div className="space-y-7 text-center lg:text-left order-2 lg:order-1">
+            {/* Badge/Label Above Heading */}
+            <div className="animate-slide-in-left flex items-center justify-center lg:justify-start gap-2 mb-2">
+              <div className="px-4 py-2 bg-gradient-to-r from-red-50 to-red-100 rounded-full border border-red-200 shadow-sm">
+                <p className="text-xs sm:text-sm font-semibold text-red-600 tracking-wide uppercase flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Mindset & Relationship Breakthrough
+                </p>
+              </div>
+            </div>
 
-                {/*<motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-pink-500 rounded-full mx-auto lg:mx-0"
-                  initial={{ width: 0 }}
-                  animate={{ width: "90%" }}
-                  transition={{ duration: 1.5, delay: 1 }}
-                />*/}
-              </motion.h1>
-            </motion.div>
-
-            {/* Subheading */}
-            <motion.h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 font-medium leading-relaxed" variants={itemVariants}>
-              Guiding You Through Life's Toughest Transitions
-            </motion.h2>
+            {/* Main Heading - Enhanced with better spacing */}
+            <div className="space-y-4 animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl lg:text-4xl font-extrabold leading-[1.15] tracking-tight">
+                <span className="block bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  YOU ARE STRONGER
+                </span>
+                <span className="block bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  THAN YOUR STRUGGLES.
+                </span>
+              </h1>
+              <div className="flex items-center justify-center lg:justify-start gap-3 pt-2">
+                <div className="h-1 w-16 bg-gradient-to-r from-red-500 to-red-400 rounded-full animate-pulse" />
+                <p className="text-lg sm:text-xl lg:text-2xl font-light italic text-gray-700">
+                  Your breakthrough begins within
+                </p>
+              </div>
+            </div>
 
             {/* Description */}
-            <motion.div className="space-y-4 -mt-5" variants={itemVariants}>
-              <p className="text-base sm:text-lg lg:text-xl italic text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Ready to let go of the pain, the doubts, and the beliefs that keep you stuck?
-
+            <div className="space-y-5 animate-fade-in-delay">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                At The Inner Bloom Journey, we guide you to heal, let go, and evolve — from heartbreak, self-doubt, or limiting beliefs that hold you back.
               </p>
-              <p className="text-base sm:text-lg lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 md:-mt-2">
-                The Inner Bloom Journey is your space to heal from heartbreak, divorce, or separation to release the weight of limiting beliefs and to rebuild your self-worth from the inside out. Here, you’ll find clarity, confidence, and inner strength you need to create a life you love, one that reflects who you truly are and the future you deserve.
+
+              <div className="space-y-3">
+                <p className="text-base sm:text-lg font-medium text-gray-800">
+                  As a Mindset & Relationship Breakthrough Coach, I help you:
+                </p>
+                <div className="space-y-2.5">
+                  {[
+                    "Reconnect with your self-worth",
+                    "Rebuild your confidence",
+                    "Transform pain into purpose"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3 group hover:translate-x-2 transition-transform duration-300">
+                      <div className="p-1.5 bg-red-50 rounded-full group-hover:bg-red-100 transition-colors duration-300">
+                        <Sparkles className="w-4 h-4 text-red-500 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                This is your safe space to release the past, rise above your struggles, and step into the most authentic version of yourself — one filled with clarity, courage, and peace.
               </p>
-            </motion.div>
-
-            {/* Benefits */}
-            <motion.div className="grid grid-cols-1 text-center sm:grid-cols-3 gap-4 -mt-10 py-6" variants={itemVariants}>
-              {[
-                { icon: FaHeart, text: "Heal After Divorce or Separation" },
-                { icon: FaShieldAlt, text: "Inner Strength" },
-                { icon: FaSeedling, text: "Personal Growth" }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200 hover:bg-white/80 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <item.icon className="text-2xl text-red-400 mb-2" />
-                  <span className="text-sm font-medium text-gray-700">{item.text}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Button */}
-           <motion.div variants={itemVariants} className="-mt-7 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {isMobile ? (
-             <div className="flex items-center justify-center gap-2 w-full max-w-xs mt-2 mx-auto">
-  {/* Start Journey Button */}
-  
-
-  {/* Become a Guest Button */}
-  <motion.button
-    onClick={() => navigate("/podcast-booking")}
-    className=" flex-1 min-w-0 px-3 py-3 bg-gray-600 border-2 border-gray-400 text-white rounded-lg font-semibold text-md"
-    whileHover={{ scale: 1.05, y: -2 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    <span className="relative z-10 flex items-center justify-center gap-1">
-      Become a Guest
-    </span>
-    <div className="absolute inset-0 bg-gray-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
-  </motion.button>
-
-  <motion.button
-    onClick={() => navigate("/booking")}
-    className="flex-1 min-w-0 px-3 py-3 bg-red-500 border-2 border-red-400 text-white rounded-lg font-semibold text-md"
-    whileHover={{ scale: 1.05, y: -2 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    <span className="relative z-10 flex items-center justify-center gap-1 ">
-      Connect Now
-      <motion.span whileHover={{ x: 3 }}>
-        <FaArrowRightLong className="text-xs" />
-      </motion.span>
-    </span>
-    <div className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
-  </motion.button>
-</div>
-
-
-              ) : (
-                // Desktop View - Single Button
-                <motion.button
-                  onClick={() => navigate("/booking")}
-                  className="group px-8 py-4 bg-transparent border-2 border-red-400 text-red-500 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden hover:shadow-2xl"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10 flex items-center gap-3 cursor-pointer group-hover:text-white transition-colors duration-300">
-                    Start Your Journey Today
-                    <motion.span whileHover={{ x: 5 }}>
-                      <FaArrowRightLong className="text-lg" />
-                    </motion.span>
-                  </span>
-                  <div className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
-                </motion.button>
-              )}
-            </motion.div>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div className="flex justify-center lg:justify-end order-1 lg:order-2" variants={imageVariants} initial="hidden" animate="visible">
-            <div className="relative group max-w-md lg:max-w-lg xl:max-w-xl -mt-12 md:-mt-18">
-              <div className="absolute -inset-4 bg-gradient-to-r from-red-300/30 to-gray-300/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <motion.img
-                src="Main.jpg"
-                alt="Life Coaching - Healing and Growth"
-                className="relative rounded-2xl mt-10 md:-mt-5 w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[550px] object-cover shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
-                whileHover={{ y: -5 }}
-              />
-              {/*<div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent rounded-2xl"></div>*/}
             </div>
-          </motion.div>
+
+            {/* Stats/Trust Indicators */}
+            <div className="grid grid-cols-3 gap-4 py-4 animate-fade-in-delay-2">
+              {[
+                { icon: Heart, label: "Healing", value: "Heart-Centered" },
+                { icon: Shield, label: "Safe Space", value: "Confidential" },
+                { icon: Leaf, label: "Growth", value: "Transformative" }
+              ].map((item, index) => (
+                <div key={index} className="group text-center p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-red-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <item.icon className="w-6 h-6 text-red-500 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <p className=" text-[10px] md:text-xs font-semibold text-gray-800">{item.value}</p>
+                  <p className="text-xs text-gray-600">{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Tagline */}
+            <div className="space-y-2 animate-fade-in-delay-3">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide">
+                <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  LET GO. GROW. TRANSFORM. EVOLVE.
+                </span>
+              </h2>
+              <p className="text-lg sm:text-xl font-light italic text-gray-700">
+                Your healing begins here
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 animate-fade-in-delay-4">
+              {/* Connect Now - Primary CTA */}
+              <button
+                onClick={handleConnectNow}
+                className="group relative px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative cursor-pointer z-10 flex items-center justify-center gap-3">
+                  Connect Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-white rounded-full blur-xl" />
+              </button>
+
+              {/* Become a Guest - Secondary CTA */}
+              <button
+                onClick={handleBecomeGuest}
+                className="group relative px-8 py-4 bg-white border-2 border-gray-300 text-gray-700 rounded-full font-semibold text-lg shadow-md hover:shadow-xl hover:border-red-300 hover:text-red-600 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="relative z-10 flex cursor-pointer items-center justify-center gap-3">
+                  Become a Guest
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 animate-fade-in-right">
+            <div className="relative group max-w-md lg:max-w-lg xl:max-w-xl w-full">
+              {/* Animated rings around image */}
+              <div className="absolute inset-0 rounded-3xl">
+                <div className="absolute -inset-2 border-2 border-red-200/30 rounded-3xl animate-ping-slow" />
+                <div className="absolute -inset-4 border border-red-300/20 rounded-3xl animate-pulse" />
+              </div>
+
+              {/* Glow Effect */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-red-300/40 via-orange-200/30 to-red-200/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75 animate-pulse-slow" />
+
+              {/* Main Image */}
+              <div className="relative">
+                <img
+                  src="Main.jpg"
+                  alt="Life Coaching - Inner Bloom Journey"
+                  className="relative rounded-3xl w-full h-[350px] sm:h-[450px] lg:h-[520px] xl:h-[580px] object-cover shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2 border-4 border-white"
+                />
+
+                {/* Image Overlay with gradient */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-gray-900/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-2xl p-4 animate-fade-in-delay-4 hover:scale-110 transition-transform duration-300">
+                  <div className="text-center">
+                    <p className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Start</p>
+                    <p className="text-xs text-gray-600 font-medium">Your Journey</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
