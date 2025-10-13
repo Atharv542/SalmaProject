@@ -38,9 +38,9 @@ const navigate= useNavigate();
             {/* Badge/Label Above Heading */}
             <div className="animate-slide-in-left flex items-center justify-center lg:justify-start gap-2 mb-2">
               <div className="px-4 py-2 bg-gradient-to-r from-red-50 to-red-100 rounded-full border border-red-200 shadow-sm">
-                <p className="text-xs sm:text-sm font-semibold text-red-600 tracking-wide uppercase flex items-center gap-2">
+                <p className="text-[11px] sm:text-[10px] font-semibold text-red-600 tracking-wide uppercase flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  Mindset & Relationship Breakthrough
+                  Mindset & Relationship Breakthrough Coach
                 </p>
               </div>
             </div>
