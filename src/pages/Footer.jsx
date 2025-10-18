@@ -112,7 +112,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.youtube.com/@salmanisha2025"
+                href="https://www.youtube.com/@TheInnerBloomJourney07"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2 bg-gradient-to-br from-red-500 to-red-600 rounded-full text-white hover:shadow-lg transform hover:scale-110 transition-all duration-300"
